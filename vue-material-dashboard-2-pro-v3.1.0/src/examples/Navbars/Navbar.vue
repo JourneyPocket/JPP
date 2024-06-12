@@ -44,7 +44,7 @@
         <ul class="navbar-nav justify-content-end">
           <li class="nav-item d-flex align-items-center">
             <router-link
-              :to="{ name: 'Signin Basic' }"
+              to="/Signin Basic"
               class="px-0 nav-link font-weight-bold lh-1"
               :class="color"
             >
@@ -208,7 +208,7 @@
 </template>
 <script>
 import MaterialInput from "@/components/MaterialInput.vue";
-import Breadcrumbs from "../Breadcrumbs.vue";
+import Breadcrumbs from "./Breadcrumbs.vue";
 import { mapMutations, mapState } from "vuex";
 
 export default {

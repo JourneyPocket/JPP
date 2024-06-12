@@ -1,9 +1,10 @@
 <template>
   <a
-    :data-bs-toggle="collapse ? 'collapse' : ''"
+    data-bs-toggle="collapse"
     :href="collapse ? `#${collapseRef}` : collapseRef"
     :aria-controls="collapseRef"
-    aria-expanded="false"
+    aria-expanded="true"
+    aria-checked="true"
     class="nav-link"
     v-bind="$attrs"
     @click="isExpanded = !isExpanded"
@@ -42,7 +43,7 @@ export default {
   },
   data() {
     return {
-      isExpanded: false,
+      isExpanded: true,
     };
   },
   computed: {

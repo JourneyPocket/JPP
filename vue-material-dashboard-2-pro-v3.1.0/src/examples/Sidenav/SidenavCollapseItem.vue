@@ -3,7 +3,7 @@
     <a
       class="nav-link text-white"
       data-bs-toggle="collapse"
-      aria-expanded="false"
+      aria-expanded="true"
       :href="`#${refer}`"
       @click="isExpanded = !isExpanded"
     >
@@ -39,7 +39,7 @@ export default {
   },
   data() {
     return {
-      isExpanded: false,
+      isExpanded: true,
     };
   },
 };

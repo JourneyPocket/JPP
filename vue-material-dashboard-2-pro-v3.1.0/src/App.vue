@@ -19,7 +19,7 @@ Coded by www.creative-tim.com
     :class="[isRTL ? 'fixed-end' : 'fixed-start']"
   />
   <main
-    class="main-content position-relative max-height-vh-100 h-100 overflow-x-hidden"
+  class="main-content position-relative max-height-vh-100 h-100 overflow-x-hidden"
   >
     <!-- nav -->
     <navbar
@@ -35,6 +35,7 @@ Coded by www.creative-tim.com
       :class="[showConfig ? 'show' : '', hideConfigButton ? 'd-none' : '']"
     />
   </main>
+  
 </template>
 <script>
 import Sidenav from "./examples/Sidenav";
