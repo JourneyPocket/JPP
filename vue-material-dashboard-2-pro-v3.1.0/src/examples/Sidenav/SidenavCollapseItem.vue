@@ -12,7 +12,7 @@
         {{ text }} <b class="caret"></b
       ></span>
     </a>
-    <div :id="refer" class="collapse">
+    <div :id="refer" class="collapse show">
       <ul class="nav nav-sm flex-column">
         <slot name="nav-child-item" />
       </ul>

@@ -4,7 +4,6 @@
     :href="collapse ? `#${collapseRef}` : collapseRef"
     :aria-controls="collapseRef"
     aria-expanded="true"
-    aria-checked="true"
     class="nav-link"
     v-bind="$attrs"
     @click="isExpanded = !isExpanded"
@@ -19,7 +18,7 @@
       navText
     }}</span>
   </a>
-  <div :id="collapseRef" class="collapse">
+  <div :id="collapseRef" class="collapse show">
     <slot name="list"></slot>
   </div>
 </template>
