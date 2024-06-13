@@ -6,8 +6,10 @@ import Report from "../views/dashboards/Report.vue";
 import IncomeInput from "../views/transaction/IncomeInput.vue";
 import ConsumptionInput from "../views/transaction/ConsumptionInput.vue";
 import ExchangeInput from "../views/transaction/ExchangeInput.vue"
-import Jouney from "../views/journey/JourneyDefault.vue"
+import Journey from "../views/journey/JourneyDefault.vue"
 import JouneyWrite from "../views/journey/JourneyWrite.vue"
+import Calendar from "../views/transaction/Calendar.vue"
+import TransactionList from "../views/transaction/TransactionList.vue"
 const routes = [
   {
     path: "/",
@@ -47,14 +49,25 @@ const routes = [
   },
   {
     path: "/journey",
-    name: "Journey Main",
-    component: Jouney,
+    name: "JourneyMain",
+    component: Journey,
   },
   {
     path: "/journey/place",
-    name: "Journey Write",
+    name: "JourneyWrite",
     component: JouneyWrite,
-  }
+  },
+  { // 캘린더 
+    path: "/transaction/calendar",
+    name: "Calendar",
+    component: Calendar,
+  },
+  { // 거래 내역
+    path: "/transaction/list",
+    name: "TransactionList",
+    component: TransactionList,
+  },
+  
 ];
 
 const router = createRouter({

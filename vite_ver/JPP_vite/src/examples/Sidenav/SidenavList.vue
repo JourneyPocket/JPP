@@ -89,15 +89,17 @@
             <ul class="nav pe-1">
               <!-- nav links -->
               <sidenav-item
-                  to="Default"
-                  mini-icon="D"
-                  text="Analytics"
+                :to="{name: 'JourneyMain'}"
+                mini-icon="JM"
+                text="Journey"
                 />
-                <sidenav-item
-                  to="Sales"
-                  mini-icon="S"
-                  text="Sales"
-                />
+                  
+              <sidenav-item
+              :to="{name: 'JourneyWrite'}"
+              mini-icon="JW"
+              text="Journey write"
+            />
+                
               
               <sidenav-collapse-item
                 refer="projectsExample"
@@ -134,6 +136,16 @@
           <template #list>
             <ul class="nav pe-1">
               <!-- nav links -->
+              <sidenav-item
+                :to="{ name: 'Calendar' }"
+                  mini-icon="C"
+                  text="Calendar"
+                />
+                <sidenav-item
+                :to="{ name: 'TransactionList' }"
+                  mini-icon="L"
+                  text="List"
+                />
               <sidenav-item
                   :to="{ name: 'IncomeInput' }"
                   mini-icon="I"
