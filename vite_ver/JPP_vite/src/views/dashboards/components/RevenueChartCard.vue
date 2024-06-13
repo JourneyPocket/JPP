@@ -44,7 +44,7 @@
           datasets: [
             {
               label: 'Revenue',
-              data: [50, 100, 200, 190, 400, 350, 500, 450, 700, 800, 900, 1000, 1100, 1200, 1300],
+              data: [p, 100, 200, 190, 400, 350, 500, 450, 700, 800, 900, 1000, 1100, 1200, 1300],
             },
             {
               label: 'Consume',
@@ -59,10 +59,85 @@
 
 <script>
 import DefaultLineChart from "@/examples/Charts/DefaultLineChart.vue";
+import {ref} from 'vue';
+import axios from 'axios';
 export default {
   name: "RevenueChartCard",
   components: {
     DefaultLineChart,
+  },
+  setup() {
+    const incomeList=ref([]);
+    const consumptionList=ref([]);
+    const totalPrice=ref(0);
+    const p=ref(0)
+    // const incomeDateList=ref([]);
+    // const conDateList=ref([]);
+    let incomeDateList=[];
+    let conDateList=[];
+    const getIncomeList = async(e)=> {
+      const params={};
+      let requestURL="/api/income";
+      try {
+        let response = await axios.get(requestURL);
+        // console.log(response.data)
+        incomeList.value=response.data;
+        incomeList.value.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+        incomeList.value.forEach(element => {
+          incomeDateList.push({"date" :element.date,
+          "price" : element.price
+          })
+
+        });
+        console.log(incomeDateList)
+        let im= new Date(incomeDateList[0].date)
+        console.log(im.getMonth()+1)
+        let ps = incomeDateList[0].price.toString();
+        const numberOnly = ps.replace(/\D/g, '');
+        console.log(numberOnly)
+
+        
+        for(let i = 0; i < incomeDateList.length; i++){
+          let mm = new Date(incomeDateList[i].data)
+          let pp = incomeDateList[i].price.toString();
+          const numberOnly = pp.replace(/\D/g, '');
+          if ((mm) == (mm)) {
+          totalPrice.value = parseInt(numberOnly) + parseInt(incomeDateList[i].price);
+          } else {
+            totalPrice.value = parseInt(numberOnly);
+          }
+        }
+        console.log(totalPrice.value)
+      } catch(error) {
+        console.log(error);
+        alert("에러발생");
+      }
+    }
+
+    const getConList =async(e) => {
+      const params={};
+      let requestURL="/api/consumption";
+      try {
+        let response = await axios.get(requestURL);
+        
+        consumptionList.value=response.data;
+        consumptionList.value.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+        consumptionList.value.forEach(element => {
+          conDateList.push({"date" :element.date,
+          "price" : element.price
+        })
+        });
+      } catch(error) {
+        console.log(error);
+        alert("에러발생");
+      }
+    }
+    getIncomeList();
+    getConList();
+    
+    return {incomeList, consumptionList, totalPrice, p}
   },
 };
 </script>

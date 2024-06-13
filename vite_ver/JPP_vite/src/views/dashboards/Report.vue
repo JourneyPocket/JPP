@@ -202,6 +202,9 @@ import DoughnutChart from "@/examples/Charts/DoughnutChart.vue";
 
 // images
 import setTooltip from "@/assets/js/tooltip.js";
+// import {ref} from 'vue';
+// import axios from 'axios';
+
 
 export default {
   name: "Report",
@@ -249,6 +252,78 @@ export default {
       
     };
   },
+  // setup() {
+  //   const incomeList=ref([]);
+  //   const consumptionList=ref([]);
+    
+  //   // const incomeDateList=ref([]);
+  //   // const conDateList=ref([]);
+  //   let incomeDateList=[];
+  //   let conDateList=[];
+  //   const getIncomeList = async(e)=> {
+  //     const params={};
+  //     let requestURL="/api/income";
+  //     try {
+  //       let response = await axios.get(requestURL);
+  //       // console.log(response.data)
+  //       incomeList.value=response.data;
+  //       incomeList.value.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+  //       incomeList.value.forEach(element => {
+  //         incomeDateList.push({"date" :element.date,
+  //         "price" : element.price
+  //         })
+
+  //       });
+  //       console.log(incomeDateList)
+  //       let im= new Date(incomeDateList[0].date)
+  //       console.log(im.getMonth()+1)
+  //       let ps = incomeDateList[0].price.toString();
+  //       const numberOnly = ps.replace(/\D/g, '');
+  //       console.log(numberOnly)
+
+  //       let totalPrice = 0;
+  //       for(let i = 0; i < incomeDateList.length; i++){
+  //         let mm = new Date(incomeDateList[i].data)
+  //         let pp = incomeDateList[i].price.toString();
+  //         const numberOnly = pp.replace(/\D/g, '');
+  //         if ((mm) == (mm)) {
+  //         totalPrice = parseInt(numberOnly) + parseInt(incomeDateList[i].price);
+  //         } else {
+  //           totalPrice = parseInt(numberOnly);
+  //         }
+  //       }
+  //       console.log(totalPrice)
+  //     } catch(error) {
+  //       console.log(error);
+  //       alert("에러발생");
+  //     }
+  //   }
+
+  //   const getConList =async(e) => {
+  //     const params={};
+  //     let requestURL="/api/consumption";
+  //     try {
+  //       let response = await axios.get(requestURL);
+        
+  //       consumptionList.value=response.data;
+  //       consumptionList.value.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+  //       consumptionList.value.forEach(element => {
+  //         conDateList.push({"date" :element.date,
+  //         "price" : element.price
+  //       })
+  //       });
+  //     } catch(error) {
+  //       console.log(error);
+  //       alert("에러발생");
+  //     }
+  //   }
+  //   getIncomeList();
+  //   getConList();
+    
+  //   return {incomeList, consumptionList}
+  // },
   mounted() {
     setTooltip(this.$store.state.bootstrap);
   },

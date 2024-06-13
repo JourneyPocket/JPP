@@ -34,6 +34,13 @@
       "price": "200,000원",
       "options": "financial income",
       "description": "금융 소득에서 발생한 금액입니다."
+    },
+    {
+      "id": "a9ae",
+      "date": "2024-07-12",
+      "price": "300000원",
+      "options": "salary",
+      "description": "월급으로 받은 소득 입니다."
     }
   ],
   "consumption": [
@@ -164,6 +171,14 @@
       "toCountry": "Burundi",
       "fromMoney": 13333,
       "toMoney": 13333
+    },
+    {
+      "id": "e6ae",
+      "date": "",
+      "fromCountry": "Angola",
+      "toCountry": "Belarus",
+      "fromMoney": 13,
+      "toMoney": 13
     }
   ],
   "countryCode": {
