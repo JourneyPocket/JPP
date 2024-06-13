@@ -34,7 +34,7 @@
             'Apr',
             'May',
             'Jun',
-            'Jul',
+            'Jul',  
             'Aug',
             'Sep',
             'Oct',
@@ -44,11 +44,11 @@
           datasets: [
             {
               label: 'Revenue',
-              data: [p, 100, 200, 190, 400, 350, 500, 450, 700, 800, 900, 1000, 1100, 1200, 1300],
+              data: monthlyTotalPrice,
             },
             {
               label: 'Consume',
-              data: [10, 30, 40, 120, 150, 220, 280, 250, 280],
+              data: monthlyTotalConsume,
             },
           ],
         }"
@@ -70,11 +70,16 @@ export default {
     const incomeList=ref([]);
     const consumptionList=ref([]);
     const totalPrice=ref(0);
-    const p=ref(0)
+    const monthlyTotalPrice = ref([]);
+    const monthlyTotalConsume = ref([]);
+    const isLoading = ref(true);
+
+    // const p=ref(500)
     // const incomeDateList=ref([]);
     // const conDateList=ref([]);
     let incomeDateList=[];
     let conDateList=[];
+
     const getIncomeList = async(e)=> {
       const params={};
       let requestURL="/api/income";
@@ -96,48 +101,80 @@ export default {
         let ps = incomeDateList[0].price.toString();
         const numberOnly = ps.replace(/\D/g, '');
         console.log(numberOnly)
-
-        
-        for(let i = 0; i < incomeDateList.length; i++){
-          let mm = new Date(incomeDateList[i].data)
+        // 월별 총 수입 계산
+        let currentMonth = -1;
+        let currentTotalPrice = 0;
+        for (let i = 0; i < incomeDateList.length; i++) {
+          let mm = new Date(incomeDateList[i].date).getMonth() + 1;
           let pp = incomeDateList[i].price.toString();
           const numberOnly = pp.replace(/\D/g, '');
-          if ((mm) == (mm)) {
-          totalPrice.value = parseInt(numberOnly) + parseInt(incomeDateList[i].price);
-          } else {
-            totalPrice.value = parseInt(numberOnly);
+
+          if (mm !== currentMonth) {
+            if (currentMonth !== -1) {
+              monthlyTotalPrice.value[currentMonth] = currentTotalPrice;
+            }
+            currentMonth = mm;
+            currentTotalPrice = 0;
           }
+
+          currentTotalPrice += parseInt(numberOnly);
         }
-        console.log(totalPrice.value)
-      } catch(error) {
+        monthlyTotalPrice.value[currentMonth] = currentTotalPrice;
+        console.log(monthlyTotalPrice.value);
+        isLoading.value = false;
+      } catch (error) {
         console.log(error);
         alert("에러발생");
       }
+      
     }
 
-    const getConList =async(e) => {
-      const params={};
-      let requestURL="/api/consumption";
-      try {
-        let response = await axios.get(requestURL);
-        
-        consumptionList.value=response.data;
-        consumptionList.value.sort((a, b) => new Date(a.date) - new Date(b.date));
+    const getConList = async (e) => {
+  const params = {};
+  let requestURL = "/api/consumption";
+  try {
+    let response = await axios.get(requestURL);
+    consumptionList.value = response.data;
+    consumptionList.value.sort((a, b) => new Date(a.date) - new Date(b.date));
 
-        consumptionList.value.forEach(element => {
-          conDateList.push({"date" :element.date,
-          "price" : element.price
-        })
-        });
-      } catch(error) {
-        console.log(error);
-        alert("에러발생");
+    consumptionList.value.forEach((element) => {
+      conDateList.push({
+        date: element.date,
+        price: element.price,
+      });
+    });
+
+    // 월별 총 지출 계산
+    let currentMonth = -1;
+    let currentTotalConsume = 0;
+    for (let i = 0; i < conDateList.length; i++) {
+      let mm = new Date(conDateList[i].date).getMonth() + 1;
+      let pp = conDateList[i].price.toString();
+      const numberOnly = pp.replace(/\D/g, '');
+
+      if (mm !== currentMonth) {
+        if (currentMonth !== -1) {
+          monthlyTotalConsume.value[currentMonth] = currentTotalConsume;
+        }
+        currentMonth = mm;
+        currentTotalConsume = 0;
       }
+
+      currentTotalConsume += parseInt(numberOnly);
     }
+    monthlyTotalConsume.value[currentMonth] = currentTotalConsume;
+    console.log(monthlyTotalConsume.value);
+    isLoading.value = false;
+  } catch (error) {
+    console.log(error);
+    alert("에러발생");
+  }
+};
+
     getIncomeList();
     getConList();
     
-    return {incomeList, consumptionList, totalPrice, p}
+    return {incomeList, consumptionList, totalPrice, monthlyTotalPrice, monthlyTotalConsume, isLoading}
   },
 };
 </script>
