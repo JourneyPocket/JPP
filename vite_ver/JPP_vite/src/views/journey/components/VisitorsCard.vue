@@ -20,122 +20,7 @@
               </div>
             </div>
           </div>
-          <!-- Product-->
-          <!-- <div class="d-block d-sm-flex align-items-center py-4 ps-4 border-bottom">
-            <a class="d-block mb-3 mb-sm-0 me-sm-4 ms-sm-0 mx-auto" href="marketplace-single.html"
-              style="width: 12.5rem;"><img class="rounded-3" src="../../../assets/img/apple-icon.png" alt="Product"></a>
-            <div class="text-center text-sm-start">
-              <h3 class="h6 product-title mb-2"><a href="marketplace-single.html">Flat-line E-Commerce Icons
-                  (AI)</a>
-              </h3>
-              <div class="d-inline-block text-accent">$18.<small>00</small></div>
-              <div class="d-inline-block text-muted fs-ms border-start ms-2 ps-2">Sales: <span
-                  class="fw-medium">26</span></div>
-              <div class="d-inline-block text-muted fs-ms border-start ms-2 ps-2">Earnings: <span
-                  class="fw-medium">$327.<small>60</small></span></div>
-              <div class="d-flex justify-content-center justify-content-sm-start pt-3">
-                <button class="btn bg-faded-accent btn-icon me-2" type="button" data-bs-toggle="tooltip"
-                  title="Download"><i class="ci-download text-accent"></i></button>
-                <button class="btn bg-faded-info btn-icon me-2" type="button" data-bs-toggle="tooltip" title="Edit"><i
-                    class="ci-edit text-info"></i></button>
-                <button class="btn bg-faded-danger btn-icon" type="button" data-bs-toggle="tooltip" title="Delete"><i
-                    class="ci-trash text-danger"></i></button>
-              </div>
-            </div>
-          </div> -->
-          <!-- Product-->
-          <!-- <div class="d-block d-sm-flex align-items-center py-4 ps-4 border-bottom">
-            <a class="d-block mb-3 mb-sm-0 me-sm-4 ms-sm-0 mx-auto" href="marketplace-single.html"
-              style="width: 12.5rem;"><img class="rounded-3" src="../../../assets/img/apple-icon.png" alt="Product"></a>
-            <div class="text-center text-sm-start">
-              <h3 class="h6 product-title mb-2"><a href="marketplace-single.html">Square Style Mobile UI Kit
-                  (Sketch)</a></h3>
-              <div class="d-inline-block text-accent">$24.<small>00</small></div>
-              <div class="d-inline-block text-muted fs-ms border-start ms-2 ps-2">Sales: <span
-                  class="fw-medium">153</span></div>
-              <div class="d-inline-block text-muted fs-ms border-start ms-2 ps-2">Earnings: <span
-                  class="fw-medium">$2,570.<small>40</small></span></div>
-              <div class="d-flex justify-content-center justify-content-sm-start pt-3">
-                <button class="btn bg-faded-accent btn-icon me-2" type="button" data-bs-toggle="tooltip"
-                  title="Download"><i class="ci-download text-accent"></i></button>
-                <button class="btn bg-faded-info btn-icon me-2" type="button" data-bs-toggle="tooltip" title="Edit"><i
-                    class="ci-edit text-info"></i></button>
-                <button class="btn bg-faded-danger btn-icon" type="button" data-bs-toggle="tooltip" title="Delete"><i
-                    class="ci-trash text-danger"></i></button>
-              </div>
-            </div>
-          </div> -->
-          <!-- Product-->
-          <!-- <div class="d-block d-sm-flex align-items-center py-4 border-bottom">
-            <a class="d-block mb-3 mb-sm-0 me-sm-4 ms-sm-0 mx-auto" href="marketplace-single.html"
-              style="width: 12.5rem;"><img class="rounded-3" src="../../../assets/img/apple-icon.png" alt="Product"></a>
-            <div class="text-center text-sm-start">
-              <h3 class="h6 product-title mb-2"><a href="marketplace-single.html">Floating Phone and Tablet Mockup
-                  (PSD)</a></h3>
-              <div class="d-inline-block text-accent">$15.<small>00</small></div>
-              <div class="d-inline-block text-muted fs-ms border-start ms-2 ps-2">Sales: <span
-                  class="fw-medium">109</span></div>
-              <div class="d-inline-block text-muted fs-ms border-start ms-2 ps-2">Earnings: <span
-                  class="fw-medium">$1,144.<small>50</small></span></div>
-              <div class="d-flex justify-content-center justify-content-sm-start pt-3">
-                <button class="btn bg-faded-accent btn-icon me-2" type="button" data-bs-toggle="tooltip"
-                  title="Download"><i class="ci-download text-accent"></i></button>
-                <button class="btn bg-faded-info btn-icon me-2" type="button" data-bs-toggle="tooltip" title="Edit"><i
-                    class="ci-edit text-info"></i></button>
-                <button class="btn bg-faded-danger btn-icon" type="button" data-bs-toggle="tooltip" title="Delete"><i
-                    class="ci-trash text-danger"></i></button>
-              </div>
-            </div>
-          </div> -->
-          <!-- Product-->
-          <!-- <div class="d-block d-sm-flex align-items-center py-4 border-bottom">
-            <a class="d-block mb-3 mb-sm-0 me-sm-4 ms-sm-0 mx-auto" href="marketplace-single.html"
-              style="width: 12.5rem;"><img class="rounded-3" src="../../../assets/img/apple-icon.png" alt="Product"></a>
-            <div class="text-center text-sm-start">
-              <h3 class="h6 product-title mb-2"><a href="marketplace-single.html">Minimal Mobile App UI Kit
-                  (Sketch)</a></h3>
-              <div class="d-inline-block text-accent">$23.<small>00</small></div>
-              <div class="d-inline-block text-muted fs-ms border-start ms-2 ps-2">Sales: <span
-                  class="fw-medium">117</span></div>
-              <div class="d-inline-block text-muted fs-ms border-start ms-2 ps-2">Earnings: <span
-                  class="fw-medium">$1,883.<small>70</small></span></div>
-              <div class="d-flex justify-content-center justify-content-sm-start pt-3">
-                <button class="btn bg-faded-accent btn-icon me-2" type="button" data-bs-toggle="tooltip"
-                  title="Download"><i class="ci-download text-accent"></i></button>
-                <button class="btn bg-faded-info btn-icon me-2" type="button" data-bs-toggle="tooltip" title="Edit"><i
-                    class="ci-edit text-info"></i></button>
-                <button class="btn bg-faded-danger btn-icon" type="button" data-bs-toggle="tooltip" title="Delete"><i
-                    class="ci-trash text-danger"></i></button>
-              </div>
-            </div>
-          </div> -->
-          <!-- Product-->
-          <!-- <div class="d-block d-sm-flex align-items-center pt-4 pb-2">
-            <a class="d-block mb-3 mb-sm-0 me-sm-4 ms-sm-0 mx-auto" href="marketplace-single.html"
-              style="width: 12.5rem;"><img class="rounded-3" src="../../../assets/img/apple-icon.png" alt="Product"></a>
-            <div class="text-center text-sm-start">
-              <h3 class="h6 product-title mb-2"><a href="marketplace-single.html">Travel &amp; Landmark Icon Pack
-                  (AI)</a></h3>
-              <div class="d-inline-block text-accent">$17.<small>00</small></div>
-              <div class="d-inline-block text-muted fs-ms border-start ms-2 ps-2">Sales: <span
-                  class="fw-medium">21</span></div>
-              <div class="d-inline-block text-muted fs-ms border-start ms-2 ps-2">Earnings: <span
-                  class="fw-medium">$249.<small>90</small></span></div>
-              <div class="d-flex justify-content-center justify-content-sm-start pt-3">
-                <button class="btn bg-faded-accent btn-icon me-2" type="button" data-bs-toggle="tooltip"
-                  title="Download"><i class="ci-download text-accent"></i></button>
-                <button class="btn bg-faded-info btn-icon me-2" type="button" data-bs-toggle="tooltip" title="Edit"><i
-                    class="ci-edit text-info"></i></button>
-                <button class="btn bg-faded-danger btn-icon" type="button" data-bs-toggle="tooltip" title="Delete"><i
-                    class="ci-trash text-danger"></i></button>
-              </div>
-            </div>
-          </div> -->
-          <Places></Places>
-          <Places></Places>
-          <Places></Places>
-          <Places></Places>
-          <Places></Places>
+          <Places v-for="place in placeList" :place="place" ></Places>
         </div>
       </section>
     </div>
@@ -144,4 +29,23 @@
 
 <script setup>
 import Places from './Places.vue';
+import { ref } from 'vue'
+import { useSimpleStore } from '@/store/journeyJSON.js';
+import { storeToRefs } from 'pinia';
+const { fetchPlaceList } = useSimpleStore();
+
+const placeList = ref('')
+
+
+const getList = async () => {
+  await fetchPlaceList(placeList)
+
+  // await console.log(placeList.value[0].name)
+}
+
+getList()
+
+
+
+
 </script>
