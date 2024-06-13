@@ -22,18 +22,23 @@
               </div>
             </div>
             <div class="card-body">
-              <form role="form" class="text-start mt-3">
-                <div class="mb-3">
-                  <label for="incomeDate">Date</label>
-                  <material-input
+              <form role="form" class="text-start mt-3" @submit.prevent="submit">
+                <label for="incomeDate">Date</label>
+                <div class="mb-3 input-group border ps-3 pe-3">
+                  
+                  <input
+                  v-model="date"
+                  class="form-control"
                     id="dateInput"
                     type="date"                    
                     name="incomeDate"
                   />
                 </div>
-                <div class="mb-3">
-                  <label for="amountInput">Price</label>
-                  <material-input
+                <label for="amountInput">Price</label>
+                <div class="mb-3 input-group border ps-3">                  
+                  <input
+                    v-model="price"
+                    class="form-control"
                     id="amountInput"
                     type="number"
                     label="Price"
@@ -47,10 +52,12 @@
                   </select>
                 </div>     
                 
-                <div class="mb-3">
-                  <label for="desInput">Description</label>
-                  <material-input
-                    class="textarea-style"
+                <label for="desInput">Description</label>
+                <div class="mb-3 input-group border ps-3">     
+                  <input
+                    placeholder="Please Write Memo"
+                    v-model="description"
+                    class="form-control"
                     id="desInput"
                     type="text"
                     label="Description"
@@ -137,16 +144,38 @@
 import MaterialInput from "@/components/MaterialInput.vue";
 import MaterialButton from "@/components/MaterialButton.vue";
 import { mapMutations } from "vuex";
-
+import {ref} from 'vue';
+import axios from 'axios';
 export default {
   name: "IncomeInput",
+  setup() {    
+    const listUrl = "/api/income";
+    const date=ref("");
+    const price=ref(0);
+    const description=ref('');
+    const selectedIncomeType=ref('salary');
+    const incomeTypes=ref(['salary', 'pin money', ' financial income', ' other']);
+
+    
   
-  data() {
-    return {
-      selectedIncomeType: 'salary',
-      incomeTypes: ['salary', 'pin money', ' financial income', ' other'],
+    const submit = async (e) => {
+      let newIncome={
+        "date": date.value,
+        "price": price.value+'원',
+        "options": selectedIncomeType.value,
+        "description": description.value
+      }
+      console.log(newIncome)
+      alert('!')
+      try {
+        let response = await axios.post(listUrl, newIncome)
+        
+      } catch(error) {
+        alert('에러발생');
+      }
       
-    };
+    }
+    return {submit, selectedIncomeType, incomeTypes, date, price, description}
   },
   components: {
     MaterialInput,
@@ -164,9 +193,7 @@ export default {
   methods: {
     ...mapMutations(["toggleEveryDisplay", "toggleHideConfig"]),
     
-    addIncome() {
-
-    }
+    
   },
   
 };

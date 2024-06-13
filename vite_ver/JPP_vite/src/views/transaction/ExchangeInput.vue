@@ -22,10 +22,11 @@
                   </div>
                 </div>
                 <div class="card-body">
-                  <form role="form" class="text-start mt-3">
-                    <div class="mb-3">
-                      <label for="incomeDate">Date</label>
-                      <material-input
+                  <form role="form" class="text-start mt-3" @submit.prevent="submit">
+                    <label for="incomeDate">Date</label>
+                    <div class="mb-3 input-group border ps-3 pe-3">
+                      <input
+                        class="form-control"
                         id="dateInput"
                         type="date"                    
                         name="incomeDate"
@@ -41,13 +42,16 @@
                         </div>          
                         <div class="mb-3 col">
                             <label for="amountInput">Amount</label>
-                            <material-input
-                                id="amountInput"
-                                type="number"
-                                label="Amount"
-                                name="amountInput"    
-                                v-model="fromAmount"
-                            />
+                            <div class="input-group border ps-3">
+                              <input
+                                  class="form-control"
+                                  id="amountInput"
+                                  type="number"
+                                  label="Amount"
+                                  name="amountInput"    
+                                  v-model="fromAmount"
+                              />
+                            </div>
                         </div>
                     
                     </div>
@@ -61,14 +65,17 @@
                         </div>          
                         <div class="mb-3 col">
                             <label for="amountInput">Amount</label>
-                            <material-input
-                                v-model="toAmount"
-                                disabled                                
-                                id="amountInput"
-                                type="number"
-                                label="Amount"
-                                name="amountInput"                   
-                            />
+                            <div class="input-group border">
+                              <input
+                                  class="form-control  ps-3"
+                                  v-model="toAmount"
+                                  disabled              
+                                  id="amountInput"
+                                  type="number"
+                                  label="Amount"
+                                  name="amountInput"                   
+                              />
+                            </div>
                         </div>
                     
                     </div>
@@ -154,17 +161,41 @@
     import MaterialButton from "@/components/MaterialButton.vue";
     import countrieCodes from '@/assets/json/countryCode.json';
     import { mapMutations } from "vuex";
-    
+    import {ref} from 'vue';
+    import axios from 'axios';
+
     export default {
       name: "ExchangeInput",
-      data() {
-        return {
-          selectedFromCountry: 'Korea',
-          selectedToCountry: 'USA',
-          countryTypes: countrieCodes,
-          fromAmount: 0,
-          toAmount: 0,
-        };
+
+      setup() {
+        const selectedFromCountry = ref('Korea');
+        const selectedToCountry = ref('USA');
+        const countryTypes = countrieCodes;
+        const fromAmount= ref(0);
+        const toAmount= ref(0);
+        const date=ref("");
+        const listUrl = "/api/exchange";
+        
+
+        const submit = async (e) => {
+          let newVal={
+            "date": date.value,
+            "fromCountry": selectedFromCountry.value,
+            "toCountry": selectedToCountry.value,
+            "fromMoney": fromAmount.value,
+            "toMoney": toAmount.value,
+          }
+          console.log(newVal)
+          alert('!')
+          try {
+            let response = await axios.post(listUrl, newVal)
+            
+          } catch(error) {
+            alert('에러발생');
+          }
+          
+        }
+        return {submit, selectedFromCountry, selectedToCountry, countryTypes, fromAmount, toAmount}
       },
       watch: {
         //여기에 api 가져와서 from -> to 환율 계산
