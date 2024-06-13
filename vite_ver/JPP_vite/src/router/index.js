@@ -5,6 +5,8 @@ import Transaction from "../views/dashboards/Transaction.vue";
 import IncomeInput from "../views/transaction/IncomeInput.vue";
 import ConsumptionInput from "../views/transaction/ConsumptionInput.vue";
 import ExchangeInput from "../views/transaction/ExchangeInput.vue"
+import Jouney from "../views/journey/JourneyDefault.vue"
+import JouneyWrite from "../views/journey/JourneyWrite.vue"
 const routes = [
   {
     path: "/",
@@ -36,6 +38,16 @@ const routes = [
     name: "ExchangeInput",
     component: ExchangeInput,
   },
+  {
+    path: "/journey",
+    name: "Journey Main",
+    component: Jouney,
+  },
+  {
+    path: "/journey/place",
+    name: "Journey Write",
+    component: JouneyWrite,
+  }
 ];
 
 const router = createRouter({

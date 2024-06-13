@@ -1,0 +1,34 @@
+{
+    "exchangeRecord": [
+        {
+            "global_money": 4346,
+            "national_money": 5974908,
+            "country_code": "BR",
+            "date": "2023-12-09"
+        },
+        {
+            "global_money": 1586,
+            "national_money": 5928855,
+            "country_code": "ID",
+            "date": "2024-03-29"
+        },
+        {
+            "global_money": 2014,
+            "national_money": 249101,
+            "country_code": "PL",
+            "date": "2023-09-05"
+        },
+        {
+            "global_money": 403,
+            "national_money": 2532187,
+            "country_code": "BR",
+            "date": "2024-03-23"
+        },
+        {
+            "global_money": 2585,
+            "national_money": 1434340,
+            "country_code": "US",
+            "date": "2023-08-17"
+        }
+    ]
+}

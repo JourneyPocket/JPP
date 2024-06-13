@@ -1,0 +1,171 @@
+<template>
+  <div class="row">
+    <div class="col-lg-7">
+      <div class="card mb-4">
+        <div class="d-flex">
+          <div class="icon icon-shape icon-lg bg-gradient-success shadow text-center border-radius-xl mt-n3 ms-4">
+            <i class="material-icons opacity-10" aria-hidden="true">language</i>
+          </div>
+          <h4 class="mt-3 mb-2 ms-3">World Journey Map</h4>
+        </div>
+        <div class="card-body p-3">
+          <div class="row">
+            <div id="map-wrap">
+              <div id="map" class="mt-0 mt-lg-n4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-5">
+      <div class="card mb-4">
+        <div class="p-3 pb-0 card-header">
+          <div class="d-flex justify-content-between">
+            <h4 class="mb-0">Sales by Country</h4>
+          </div>
+        </div>
+        <div class="p-3 card-body">
+          <ul class="list-group list-group-flush list my--3">
+            <li v-for="item in exchangeList" class="px-0 border-0 list-group-item">
+              <div class="row align-items-center">
+                <div class="col-auto">
+                  <!-- Country flag -->
+                  <img :src="flag" alt="Country flag" />
+                </div>
+                <div class="col">
+                  <p class="mb-0 text-xs font-weight-bold">CountryCode:</p>
+                  <h6 class="mb-0 text-sm">{{ item.country_code }}</h6>
+                </div>
+                <div class="text-center col">
+                  <p class="mb-0 text-xs font-weight-bold">global:</p>
+                  <h6 class="mb-0 text-sm">{{ item.global_money }}</h6>
+                </div>
+                <div class="text-center col">
+                  <p class="mb-0 text-xs font-weight-bold">national:</p>
+                  <h6 class="mb-0 text-sm">{{ item.national_money }}</h6>
+                </div>
+              </div>
+              <hr class="mt-3 mb-1 horizontal dark" />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <router-link to="/journey/place"><material-button color="success" variant="gradient">Add
+        place</material-button></router-link>
+  </div>
+  <div class="p-3 pb-2 card mb-4">
+    <div class="d-flex justify-content-between">
+      <h5 class="mb-0">Orders Table</h5>
+    </div>
+    <p class="text-sm mb-3">
+      View all the orders from the previous year.
+    </p>
+  </div>
+</template>
+<script setup>
+import { ref, onMounted } from 'vue';
+import { useSimpleStore } from '@/store/journeyJSON.js';
+import { storeToRefs } from 'pinia';
+import { RouterLink } from 'vue-router'
+import "@/assets/js/world.js";
+import MaterialButton from "@/components/MaterialButton.vue";
+//imgs
+import AU from "@/assets/img/icons/flags/AU.png";
+import US from "@/assets/img/icons/flags/US.png";
+import DE from "@/assets/img/icons/flags/DE.png";
+import GB from "@/assets/img/icons/flags/GB.png";
+import BR from "@/assets/img/icons/flags/BR.png";
+
+const simpleStore = useSimpleStore();
+const { exchangeList } = storeToRefs(simpleStore);
+
+
+const sales = ref({
+  us: {
+    country: "United States",
+    sales: "2500",
+    percentage: "29.9%",
+    flag: US,
+  },
+  germany: {
+    country: "Germany",
+    sales: "3.900",
+    percentage: "40.22%",
+    flag: DE,
+  },
+  britain: {
+    country: "Great Britain",
+    sales: "1.400",
+    percentage: "23.44%",
+    flag: GB,
+  },
+  brasil: {
+    country: "Brasil",
+    sales: "562",
+    percentage: "32.14%",
+    flag: BR,
+  },
+  australia: {
+    country: "Australia",
+    sales: "400",
+    percentage: "56.83%",
+    flag: AU,
+  },
+});
+
+onMounted(() => {
+  // eslint-disable-next-line no-undef
+  const map = new jsVectorMap({
+    selector: "#map",
+    map: "world_merc",
+    zoomOnScroll: false,
+    zoomButtons: false,
+    selectedMarkers: [1, 3],
+    markersSelectable: true,
+    markers: [
+      {
+        name: "USA",
+        coords: [40.71296415909766, -74.00437720027804],
+      },
+      {
+        name: "Germany",
+        coords: [51.17661451970939, 10.97947735117339],
+      },
+      {
+        name: "Brazil",
+        coords: [-7.596735421549542, -54.781694323779185],
+      },
+      {
+        name: "Russia",
+        coords: [62.318222797104276, 89.81564777631716],
+      },
+      {
+        name: "China",
+        coords: [22.320178999475512, 114.17161225541399],
+        style: {
+          fill: "#E91E63",
+        },
+      },
+    ],
+    onMarkerClick: function () {
+      console.log("맵 클릭 : " + map.markers)
+    },
+    markerStyle: {
+      initial: {
+        fill: "#e91e63",
+      },
+      hover: {
+        fill: "E91E63",
+      },
+      selected: {
+        fill: "E91E63",
+      },
+    },
+  });
+});
+
+
+</script>

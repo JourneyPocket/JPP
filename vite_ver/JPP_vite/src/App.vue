@@ -68,13 +68,13 @@ export default {
       "hideConfigButton",
     ]),
   },
-  beforeMount() {
-    const sidenav = document.getElementsByClassName("g-sidenav-show")[0];
+  // beforeMount() {
+  //   const sidenav = document.getElementsByClassName("g-sidenav-show")[0];
 
-    if (window.innerWidth > 1200) {
-      sidenav.classList.add("g-sidenav-pinned");
-    }
-  },
+  //   if (window.innerWidth > 1200) {
+  //     sidenav.classList.add("g-sidenav-pinned");
+  //   }
+  // },
   methods: {
     ...mapMutations(["toggleConfigurator", "navbarMinimize"]),
   },
