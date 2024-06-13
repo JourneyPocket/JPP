@@ -4,6 +4,8 @@ import { ref } from "vue";
 
 export const useSimpleStore = defineStore("exchange", () => {
   const exchangeList = ref([]);
+  const placeList = ref([]); 
+
 
   const fetchExchageList = async () => {
     try {
@@ -19,7 +21,19 @@ export const useSimpleStore = defineStore("exchange", () => {
     }
   };
 
+  const fetchPlaceList = async (list) => {
+    try {
+      const response = await axios.get("/api/savedPlace");
+      if(response.status === 200) {
+        list.value = response.data;
+      } else  {
+        alert("데이터 조회 실패")
+      }
+    } catch (error) {
+      alert("에러발생 : " + error);
+    }
+  }
   fetchExchageList();
 
-  return { exchangeList };
+  return { exchangeList, fetchPlaceList };
 });

@@ -10,7 +10,7 @@
         </div>
         <div class="card-body p-3">
           <div class="row">
-            <div id="map-wrap">
+            <div id="map-wrap" style="height: 360px;">
               <div id="map" class="mt-0 mt-lg-n4"></div>
             </div>
           </div>
@@ -30,7 +30,7 @@
               <div class="row align-items-center">
                 <div class="col-auto">
                   <!-- Country flag -->
-                  <img :src="flag" alt="Country flag" />
+                  <img :src="item.flag" alt="Country flag" />
                 </div>
                 <div class="col">
                   <p class="mb-0 text-xs font-weight-bold">CountryCode:</p>
@@ -71,52 +71,25 @@ import { useSimpleStore } from '@/store/journeyJSON.js';
 import { storeToRefs } from 'pinia';
 import { RouterLink } from 'vue-router'
 import "@/assets/js/world.js";
-import MaterialButton from "@/components/MaterialButton.vue";
+import MaterialButton from "@/components/MaterialButton.vue"
+  ;
 //imgs
 import AU from "@/assets/img/icons/flags/AU.png";
 import US from "@/assets/img/icons/flags/US.png";
 import DE from "@/assets/img/icons/flags/DE.png";
 import GB from "@/assets/img/icons/flags/GB.png";
 import BR from "@/assets/img/icons/flags/BR.png";
-
 const simpleStore = useSimpleStore();
 const { exchangeList } = storeToRefs(simpleStore);
 
-
-const sales = ref({
-  us: {
-    country: "United States",
-    sales: "2500",
-    percentage: "29.9%",
-    flag: US,
-  },
-  germany: {
-    country: "Germany",
-    sales: "3.900",
-    percentage: "40.22%",
-    flag: DE,
-  },
-  britain: {
-    country: "Great Britain",
-    sales: "1.400",
-    percentage: "23.44%",
-    flag: GB,
-  },
-  brasil: {
-    country: "Brasil",
-    sales: "562",
-    percentage: "32.14%",
-    flag: BR,
-  },
-  australia: {
-    country: "Australia",
-    sales: "400",
-    percentage: "56.83%",
-    flag: AU,
-  },
-});
+const updateFlag = (data) => {
+  data.forEach(element => {
+    element.flag = US
+  });
+}
 
 onMounted(() => {
+  updateFlag(exchangeList.value);
   // eslint-disable-next-line no-undef
   const map = new jsVectorMap({
     selector: "#map",
@@ -150,8 +123,11 @@ onMounted(() => {
         },
       },
     ],
-    onMarkerClick: function () {
-      console.log("맵 클릭 : " + map.markers)
+    onMarkerSelected: function (code, isSelected, selectedMarkers) {
+      console.log(code, isSelected, selectedMarkers);
+      if (code == 4) {
+        alert('you jin')
+      }
     },
     markerStyle: {
       initial: {

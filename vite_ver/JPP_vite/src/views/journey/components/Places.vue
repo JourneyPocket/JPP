@@ -3,25 +3,20 @@
             class="d-block mb-3 mb-sm-0 me-sm-4 ms-sm-0 mx-auto" href="marketplace-single.html"
             style="width: 12.5rem;"><img class="rounded-3" src="../../../assets/img/apple-icon.png" alt="Product"></a>
         <div class="text-center text-sm-start">
-            <h3 class="h6 product-title mb-2"><a href="marketplace-single.html">Flat-line E-Commerce Icons
-                    (AI)</a>
+            <h3 class="h6 product-title mb-2"><a v-bind:href="place.link">{{ place.link }}</a>
             </h3>
-            <div class="d-inline-block text-accent">$18.<small>00</small></div>
-            <div class="d-inline-block text-muted fs-ms border-start ms-2 ps-2">Sales: <span class="fw-medium">26</span>
+            <h1> {{ place.name }} </h1>
+            <div class="d-inline-block text-accent">{{place.category}}</div>
+            <div class="d-inline-block text-muted fs-ms border-start ms-2 ps-2">{{ place.priority }}
             </div>
-            <div class="d-inline-block text-muted fs-ms border-start ms-2 ps-2">Earnings: <span
-                    class="fw-medium">$327.<small>60</small></span></div>
-            <div class="d-flex justify-content-center justify-content-sm-start pt-3">
-                <button class="btn bg-faded-accent btn-icon me-2" type="button" data-bs-toggle="tooltip"
-                    title="Download"><i class="ci-download text-accent"></i></button>
-                <button class="btn bg-faded-info btn-icon me-2" type="button" data-bs-toggle="tooltip" title="Edit"><i
-                        class="ci-edit text-info"></i></button>
-                <button class="btn bg-faded-danger btn-icon" type="button" data-bs-toggle="tooltip" title="Delete"><i
-                        class="ci-trash text-danger"></i></button>
+            <div class="d-inline-block text-muted fs-ms border-start ms-2 ps-2">{{ place.date }}</div>
+            <div class="d-flex justify-content-center justify-content-sm-start pt-3">{{ place.reason }}
             </div>
         </div>
     </div>
 </template>
 <script setup>
-
+const props = defineProps({
+    place: { type: Object }
+})
 </script>
