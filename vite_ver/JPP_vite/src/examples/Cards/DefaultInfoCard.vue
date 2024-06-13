@@ -1,55 +1,279 @@
 <template>
-  <div class="card">
-    <div class="p-3 mx-4 text-center card-header d-flex justify-content-center">
-      <div
-        :class="
-          typeof icon === 'object' ? icon.background : 'bg-gradient-success'
-        "
-        class="icon icon-shape icon-lg shadow text-center border-radius-lg"
-      >
-        <i class="material-icons opacity-10" aria-hidden="true">{{
-          typeof icon === "string" ? icon : icon.component
-        }}</i>
-      </div>
-    </div>
-    <div class="p-3 pt-0 text-center card-body">
-      <h6 class="mb-0 text-center">{{ title }}</h6>
-      <span class="text-xs">{{ description }}</span>
-      <hr class="my-3 horizontal dark" />
-      <h5 class="mb-0">{{ value }}</h5>
-    </div>
-  </div>
+  <canvas :id="id" class="chart-canvas" :height="height"></canvas>
 </template>
 
 <script>
+import Chart from "chart.js/auto";
 export default {
-  name: "DefaultInfoCard",
+  name: "DefaultLineChart",
   props: {
-    icon: {
-      type: [String, Object],
-      required: true,
-      component: {
-        type: String,
-      },
-      background: {
-        type: String,
-      },
-      default: () => ({
-        background: "bg-white",
-      }),
-    },
-    title: {
+    id: {
       type: String,
-      required: true,
+      default: "chart-line",
     },
-    description: {
+    height: {
       type: String,
-      default: "",
+      default: "410",
     },
-    value: {
-      type: [String, Number],
-      default: "",
+    chart: {
+      type: Object,
+      required: true,
+      labels: Array,
+      datasets: {
+        type: Array,
+        label: String,
+        data: Array,
+      },
     },
+  },
+  mounted() {
+    var chart = document.getElementById(this.id).getContext("2d");
+
+    var gradientStroke2 = chart.createLinearGradient(0, 230, 0, 50);
+
+    gradientStroke2.addColorStop(1, "rgba(20,23,39,0.2)");
+    gradientStroke2.addColorStop(0.2, "rgba(72,72,176,0.0)");
+    gradientStroke2.addColorStop(0, "rgba(20,23,39,0)");
+
+    let chartStatus = Chart.getChart(this.id);
+    if (chartStatus != undefined) {
+      chartStatus.destroy();
+    }
+    if (this.chart.datasets.length === 3) {
+      new Chart(chart, {
+        type: "line",
+        data: {
+          labels: this.chart.labels,
+          datasets: [
+            {
+              label: this.chart.datasets[0].label,
+              tension: 0.4,
+              borderWidth: 0,
+              pointRadius: 2,
+              pointBackgroundColor: "#e91e63",
+              borderColor: "#e91e63",
+              // eslint-disable-next-line no-dupe-keys
+              borderWidth: 3,
+              backgroundColor: gradientStroke2,
+              data: this.chart.datasets[0].data,
+              maxBarThickness: 6,
+            },
+            {
+              label: this.chart.datasets[1].label,
+              tension: 0.4,
+              borderWidth: 0,
+              pointRadius: 2,
+              pointBackgroundColor: "#3A416F",
+              borderColor: "#3A416F",
+              // eslint-disable-next-line no-dupe-keys
+              borderWidth: 3,
+              backgroundColor: gradientStroke2,
+              data: this.chart.datasets[1].data,
+              maxBarThickness: 6,
+            },
+            {
+              label: this.chart.datasets[2].label,
+              tension: 0.4,
+              borderWidth: 0,
+              pointRadius: 2,
+              pointBackgroundColor: "#17c1e8",
+              borderColor: "#17c1e8",
+              // eslint-disable-next-line no-dupe-keys
+              borderWidth: 3,
+              backgroundColor: gradientStroke2,
+              data: this.chart.datasets[2].data,
+              maxBarThickness: 6,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+          interaction: {
+            intersect: false,
+            mode: "index",
+          },
+          scales: {
+            y: {
+              grid: {
+                drawBorder: false,
+                display: true,
+                drawOnChartArea: true,
+                drawTicks: false,
+                borderDash: [5, 5],
+              },
+              ticks: {
+                display: true,
+                padding: 10,
+                color: "#9ca2b7",
+              },
+            },
+            x: {
+              grid: {
+                drawBorder: false,
+                display: true,
+                drawOnChartArea: true,
+                drawTicks: true,
+                borderDash: [5, 5],
+              },
+              ticks: {
+                display: true,
+                color: "#9ca2b7",
+                padding: 10,
+              },
+            },
+          },
+        },
+      });
+    } else if (this.chart.datasets.length === 2) {
+      new Chart(chart, {
+        type: "line",
+        data: {
+          labels: this.chart.labels,
+          datasets: [
+            {
+              label: this.chart.datasets[0].label,
+              tension: 0.4,
+              borderWidth: 0,
+              pointRadius: 2,
+              pointBackgroundColor: "#cb0c9f",
+              borderColor: "#cb0c9f",
+              // eslint-disable-next-line no-dupe-keys
+              borderWidth: 3,
+              backgroundColor: gradientStroke2,
+              data: this.chart.datasets[0].data,
+              maxBarThickness: 6,
+            },
+            {
+              label: this.chart.datasets[1].label,
+              tension: 0.4,
+              borderWidth: 0,
+              pointRadius: 2,
+              pointBackgroundColor: "#3A416F",
+              borderColor: "#3A416F",
+              // eslint-disable-next-line no-dupe-keys
+              borderWidth: 3,
+              backgroundColor: gradientStroke2,
+              data: this.chart.datasets[1].data,
+              maxBarThickness: 6,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+          interaction: {
+            intersect: false,
+            mode: "index",
+          },
+          scales: {
+            y: {
+              grid: {
+                drawBorder: false,
+                display: true,
+                drawOnChartArea: true,
+                drawTicks: false,
+                borderDash: [5, 5],
+              },
+              ticks: {
+                display: true,
+                padding: 10,
+                color: "#9ca2b7",
+              },
+            },
+            x: {
+              grid: {
+                drawBorder: false,
+                display: true,
+                drawOnChartArea: true,
+                drawTicks: true,
+                borderDash: [5, 5],
+              },
+              ticks: {
+                display: true,
+                color: "#9ca2b7",
+                padding: 10,
+              },
+            },
+          },
+        },
+      });
+    } else if (this.chart.datasets.length === 1) {
+      new Chart(chart, {
+        type: "line",
+        data: {
+          labels: this.chart.labels,
+          datasets: [
+            {
+              label: this.chart.datasets[0].label,
+              tension: 0.4,
+              borderWidth: 0,
+              pointRadius: 2,
+              pointBackgroundColor: "#cb0c9f",
+              borderColor: "#cb0c9f",
+              // eslint-disable-next-line no-dupe-keys
+              borderWidth: 3,
+              backgroundColor: gradientStroke2,
+              data: this.chart.datasets[0].data,
+              maxBarThickness: 6,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+          interaction: {
+            intersect: false,
+            mode: "index",
+          },
+          scales: {
+            y: {
+              grid: {
+                drawBorder: false,
+                display: true,
+                drawOnChartArea: true,
+                drawTicks: false,
+                borderDash: [5, 5],
+              },
+              ticks: {
+                display: true,
+                padding: 10,
+                color: "#9ca2b7",
+              },
+            },
+            x: {
+              grid: {
+                drawBorder: false,
+                display: true,
+                drawOnChartArea: true,
+                drawTicks: true,
+                borderDash: [5, 5],
+              },
+              ticks: {
+                display: true,
+                color: "#9ca2b7",
+                padding: 10,
+              },
+            },
+          },
+        },
+      });
+    }
   },
 };
 </script>

@@ -3,19 +3,19 @@
     <canvas :id="id" class="chart-canvas" :height="height"></canvas>
   </div>
 </template>
+
 <script>
 import Chart from "chart.js/auto";
-
 export default {
-  name: "PieChart",
+  name: "DoughnutChart",
   props: {
     id: {
       type: String,
-      default: "chart-pie",
+      default: "doughnut-chart",
     },
     height: {
-      type: [String, Number],
-      default: "300",
+      type: String,
+      default: "240",
     },
     chart: {
       type: Object,
@@ -23,32 +23,41 @@ export default {
       labels: Array,
       datasets: {
         type: Object,
+        required: true,
         label: String,
         data: Array,
       },
     },
   },
   mounted() {
-    var pieChart = document.getElementById(this.id).getContext("2d");
+    // Doughnut chart
+    var ctx = document.getElementById(this.id).getContext("2d");
 
     let chartStatus = Chart.getChart(this.id);
     if (chartStatus != undefined) {
       chartStatus.destroy();
     }
 
-    new Chart(pieChart, {
-      type: "pie",
+    new Chart(ctx, {
+      type: "doughnut",
       data: {
         labels: this.chart.labels,
         datasets: [
           {
             label: this.chart.datasets.label,
             weight: 9,
-            cutout: 0,
+            cutout: 30,
             tension: 0.9,
             pointRadius: 2,
             borderWidth: 2,
-            backgroundColor: ["#03A9F4", "#e91e63", "#3A416F", "#a8b8d8"],
+            backgroundColor: [
+              "#03A9F4",
+              "#3A416F",
+              "#fb8c00",
+              "#a8b8d8",
+              "#e91e63",
+            ],
+
             data: this.chart.datasets.data,
             fill: false,
           },
@@ -95,4 +104,3 @@ export default {
   },
 };
 </script>
-2

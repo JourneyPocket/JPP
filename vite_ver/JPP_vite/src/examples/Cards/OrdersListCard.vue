@@ -21,7 +21,7 @@
           <tbody>
             <tr
               v-for="(
-                { title: listTitle, order, values, info, image, icon }, index
+                { title: listTitle, order, values, image }, index
               ) in lists"
               :key="index"
             >
@@ -37,42 +37,15 @@
                     <h6 class="mb-0 text-sm">{{ listTitle }}</h6>
                     <p class="mb-0 text-sm font-weight-bold text-secondary">
                       <span class="text-success">{{ order }}</span>
-                      orders
+
                     </p>
                   </div>
                 </div>
               </td>
               <td>
-                <p class="text-center mb-0 text-sm font-weight-bold">
+                <p class="text-center mb-3 text-sm font-weight-bold">
                   {{ values[0] }}
                 </p>
-              </td>
-              <td class="text-sm align-middle">
-                <p class="text-center mb-0 text-sm font-weight-bold">
-                  {{ values[1] }}
-                </p>
-              </td>
-              <td class="align-middle text-center">
-                <div
-                  class="text-center px-3 py-1 d-flex justify-content-center align-items-center"
-                >
-                  <p class="mb-0 text-sm font-weight-bold">
-                    {{ values[2] }}
-                  </p>
-                  <i class="mt-1 text-sm ms-1" :class="`ni ni-${icon}`"></i>
-                  <material-button
-                    v-if="info"
-                    size="sm"
-                    color="secondary"
-                    variant="outline"
-                    class="btn-icon-only btn-rounded mb-0 ms-2 btn-sm d-flex align-items-center justify-content-center ms-3"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="bottom"
-                    :data-bs-original-title="info"
-                  >
-                    <i class="fas fa-info" aria-hidden="true"></i>
-                  </material-button>
-                </div>
               </td>
             </tr>
           </tbody>
@@ -84,12 +57,10 @@
 
 <script>
 import MaterialAvatar from "@/components/MaterialAvatar.vue";
-import MaterialButton from "@/components/MaterialButton.vue";
 export default {
   name: "OrdersListCard",
   components: {
     MaterialAvatar,
-    MaterialButton,
   },
   props: {
     title: {
@@ -106,9 +77,6 @@ export default {
       values: Array,
       title: String,
       order: String,
-      info: String,
-      image: String,
-      icon: String,
     },
   },
 };

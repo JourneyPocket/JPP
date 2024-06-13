@@ -13,7 +13,7 @@ export default {
     },
     height: {
       type: String,
-      default: "300",
+      default: "410",
     },
     chart: {
       type: Object,

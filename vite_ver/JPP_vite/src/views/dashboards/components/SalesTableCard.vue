@@ -15,7 +15,7 @@
             <table class="table align-items-center">
               <tbody>
                 <tr
-                  v-for="({ country, sales, value, percentage }, index) of rows"
+                  v-for="({ country, Currency, Rate, Fluctuation }, index) of rows"
                   :key="index"
                 >
                   <td class="w-30">
@@ -33,29 +33,25 @@
                   </td>
                   <td>
                     <div class="text-center">
-                      <p class="mb-0 text-xs font-weight-bold">Sales:</p>
+                      <p class="mb-0 text-xs font-weight-bold">Currency unit:</p>
                       <h6 class="mb-0 text-sm font-weight-normal">
-                        {{ sales }}
+                        {{ Currency }}
                       </h6>
                     </div>
                   </td>
                   <td>
                     <div class="text-center">
-                      <p class="mb-0 text-xs font-weight-bold">Value:</p>
+                      <p class="mb-0 text-xs font-weight-bold">Rate:</p>
                       <h6 class="mb-0 text-sm font-weight-normal">
-                        {{ value }}
+                        {{ Rate }}
                       </h6>
                     </div>
                   </td>
                   <td class="text-sm align-middle">
                     <div class="text-center col">
-                      <p class="mb-0 text-xs font-weight-bold">Bounce:</p>
+                      <p class="mb-0 text-xs font-weight-bold">Fluctuation:</p>
                       <h6 class="mb-0 text-sm font-weight-normal">
-                        {{
-                          typeof percentage === "string"
-                            ? percentage
-                            : percentage + "%"
-                        }}
+                        {{ Fluctuation }}
                       </h6>
                     </div>
                   </td>

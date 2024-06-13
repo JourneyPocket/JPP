@@ -28,6 +28,17 @@
     font-family: $font-family-sans-serif;
     padding: $card-body-padding;
   }
+  .card-body2 {
+    padding: 0%;
+  }
+  .card-flight{
+    padding: 0%;
+    border-top-left-radius: $border-radius-md;
+    border-top-right-radius: $border-radius-md;
+    width: 100%; /* 이미지 폭을 카드 폭에 맞춤 */
+    height: 150px; /* 이미지 높이는 자동으로 조절 */
+    object-fit: cover; /* 이미지 크기를 유지하면서 카드에 꽉 채움 */
+  }
 
   &.card-plain {
     background-color: $card-plain-bg-color;

@@ -10,7 +10,7 @@
         <slot />
       </div>
     </div>
-    <div class="card-body2">
+    <div class="card-body">
       <h6 class="ms-4 mt-2 mb-0">{{ title }}</h6>
       <!--  eslint-disable-next-line vue/no-v-html -->
       <p class="text-sm ms-4" v-html="subtitle"></p>

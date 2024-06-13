@@ -1,8 +1,8 @@
 <template>
-  <div class="card">
-    <div class="p-3 pb-0 card-header">
+  <div class="col-lg-15 col-sm-13 mt-sm-0">
+    <div class="px-3 ps-4 pb-0 card-header">
       <div class="d-flex justify-content-between">
-        <h6 class="mb-0">Revenue</h6>
+        <h6 class="mb-0">Revenue and expenditure details by monthly</h6>
         <button
           type="button"
           class="mb-0 btn btn-icon-only btn-rounded btn-outline-secondary ms-2 btn-sm d-flex align-items-center justify-content-center"
@@ -17,11 +17,11 @@
       <div class="d-flex align-items-center">
         <span class="badge badge-md badge-dot me-4">
           <i class="bg-danger"></i>
-          <span class="text-xs text-dark">Facebook Ads</span>
+          <span class="text-xs text-dark">Consume</span>
         </span>
         <span class="badge badge-md badge-dot me-4">
           <i class="bg-dark"></i>
-          <span class="text-xs text-dark">Google Ads</span>
+          <span class="text-xs text-dark">Revenue</span>
         </span>
       </div>
     </div>
@@ -43,11 +43,11 @@
           ],
           datasets: [
             {
-              label: 'Organic Search',
-              data: [50, 100, 200, 190, 400, 350, 500, 450, 700],
+              label: 'Revenue',
+              data: [50, 100, 200, 190, 400, 350, 500, 450, 700, 800, 900, 1000, 1100, 1200, 1300],
             },
             {
-              label: 'Google Ads',
+              label: 'Consume',
               data: [10, 30, 40, 120, 150, 220, 280, 250, 280],
             },
           ],

@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 // import Home from "../views/Home.vue";
 import Default from "../views/dashboards/Default.vue";
 import Transaction from "../views/dashboards/Transaction.vue";
+import Report from "../views/dashboards/Report.vue";
 import IncomeInput from "../views/transaction/IncomeInput.vue";
 import ConsumptionInput from "../views/transaction/ConsumptionInput.vue";
 import ExchangeInput from "../views/transaction/ExchangeInput.vue"
@@ -14,6 +15,12 @@ const routes = [
     redirect: "/dashboards/dashboard-default",
   },
   {
+    path: "/dashboards/report",
+    name: "Report",
+    component: Report,
+  },
+  {
+    
     path: "/dashboards/dashboard-default",
     name: "Default",
     component: Default,
