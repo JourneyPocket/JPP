@@ -1,4 +1,3 @@
-C:\JPP\vue-material-dashboard-2-pro-v3.1.0\src\examples\Calendar.vue
 <template>
   <div class="card widget-calendar">
     <div class="p-3 pb-0 card-header">
@@ -25,9 +24,12 @@ C:\JPP\vue-material-dashboard-2-pro-v3.1.0\src\examples\Calendar.vue
 import { Calendar } from "@fullcalendar/core";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction"; // 새로 추가된 부분
+import {ref, onMounted} from 'vue';
+import axios from 'axios';
 
 export default {
   name: "Calendar",
+  
   props: {
     id: {
       type: String,
@@ -57,7 +59,7 @@ export default {
       type: Array,
       default: () => [
         {
-          title: "아녕하세요",
+          title: "ss",
           start: "2024-06-13",
           end: "2024-06-13",
           className: "expenditure",
@@ -85,8 +87,63 @@ export default {
       default: true,
     },
   },
-  mounted() {
-    const calendar = new Calendar(document.getElementById(this.id), {
+    mounted() {
+      const incomeList=[];
+      const consumptionList = [];
+
+      const getIncomeList = async(e)=> {
+        const params={};
+        let requestURL="/api/income"; // MOCK_DATA.json에서 "income" 부분의 데이터를 가져온다.
+        try {
+          let response = await axios.get(requestURL);
+          
+          incomeList.value=response.data;
+          incomeList.value.sort((a, b) => new Date(a.date) - new Date(b.date));
+          
+          incomeList.value.forEach(elements=> {
+            let newEvent={
+              "title": elements.price,
+              "start":elements.date,              
+              "id": elements.id,
+              "className": 'income'
+            }
+            this.events.push(newEvent);
+          
+          })              
+
+        } catch(error) {
+          console.log(error);
+          alert("에러발생");
+        }
+        
+      }
+    const getConList =async(e) => {
+      const params={};
+      let requestURL="/api/consumption";
+      try {
+        let response = await axios.get(requestURL);
+        
+        consumptionList.value=response.data;
+        consumptionList.value.sort((a, b) => new Date(a.date) - new Date(b.date));
+        consumptionList.value.forEach(elements=> {
+            let newEvent={
+              "title": '-'+elements.price,
+              "start":elements.date,              
+              "id": elements.id,
+              "className": 'expenditure'
+            }
+            this.events.push(newEvent);          
+          })
+          
+      } catch(error) {
+        console.log(error);
+        alert("에러발생");
+      }
+    }
+    
+    
+    const initializeCalendar= () => {
+      const calendar = new Calendar(document.getElementById(this.id), {
       contentHeight: "auto",
       plugins: [dayGridPlugin, interactionPlugin],
       initialView: this.initialView,
@@ -136,6 +193,11 @@ export default {
     });
 
     calendar.render();
+    }
+    Promise.all([getConList(), getIncomeList()]).then(initializeCalendar).catch(error => {
+      console.error("Error initializing calendar: ", error);
+    });
+    
   },
   // beforeUnmount() {
   //   if (calendar) {
@@ -160,6 +222,7 @@ export default {
   border-color: #4caf50 !important;
 }
 .income {
+  text-align: center;
   background-color: green !important;
   border-radius: 50%;
   width: 120px; /* 원하는 크기로 조정 */
@@ -169,6 +232,7 @@ export default {
   color: white; /* 텍스트 색상 */
 }
 .expenditure {
+  text-align: center;
   background-color: red !important;
   border-radius: 50%;
   width: 120px; /* 원하는 크기로 조정 */
