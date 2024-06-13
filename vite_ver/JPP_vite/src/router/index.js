@@ -50,7 +50,7 @@ const routes = [
     component: JouneyWrite,
   },
   { // 캘린더 
-    path: "/journey/place", // 여기 바꾸기
+    path: "/travel/calendar", // 여기 바꾸기
     name: "Calendar",
     component: Calendar,
   }
