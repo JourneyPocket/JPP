@@ -1,28 +1,28 @@
 {
   "income": [
     {
-      "date": "2024-06-13",
+      "date": "2024-01-13",
       "price": "100,000원",
       "options": "salary",
       "description": "월급으로 받는 소득입니다.",
       "id": "2206"
     },
     {
-      "date": "2024-06-13",
+      "date": "2024-02-13",
       "price": "50,000원",
       "options": "pin money",
       "description": "용돈으로 받은 금액입니다.",
       "id": "80f1"
     },
     {
-      "date": "2024-06-13",
+      "date": "2024-03-13",
       "price": "200,000원",
       "options": "financial income",
       "description": "금융 소득에서 발생한 금액입니다.",
       "id": "66c7"
     },
     {
-      "date": "2024-06-13",
+      "date": "2024-04-13",
       "price": "150,000원",
       "options": "other",
       "description": "기타 소득으로 받은 금액입니다.",
@@ -30,7 +30,7 @@
     },
     {
       "id": "0d39",
-      "date": "2024-06-11",
+      "date": "2024-05-11",
       "price": "200,000원",
       "options": "financial income",
       "description": "금융 소득에서 발생한 금액입니다."
@@ -41,39 +41,46 @@
       "price": "300000원",
       "options": "salary",
       "description": "월급으로 받은 소득 입니다."
+    },
+    {
+      "id": "d342",
+      "date": "2024-06-13",
+      "price": "100000원",
+      "options": " financial income",
+      "description": "돈벌었다"
     }
   ],
   "consumption": [
     {
-      "date": "2024-06-13",
+      "date": "2024-01-13",
       "price": "20,000원",
       "options": "Food",
       "description": "점심 식사 비용입니다.",
       "id": "434c"
     },
     {
-      "date": "2024-06-13",
+      "date": "2024-02-13",
       "price": "15,000원",
       "options": "Transportation",
       "description": "버스와 지하철 요금입니다.",
       "id": "8d23"
     },
     {
-      "date": "2024-06-13",
+      "date": "2024-03-13",
       "price": "50,000원",
       "options": "Cultural Life",
       "description": "영화 관람과 관련된 지출입니다.",
       "id": "99e7"
     },
     {
-      "date": "2024-06-13",
+      "date": "2024-04-13",
       "price": "30,000원",
       "options": "Fashion/Beauty",
       "description": "화장품 구매 비용입니다.",
       "id": "bd5f"
     },
     {
-      "date": "2024-06-13",
+      "date": "2024-05-13",
       "price": "100,000원",
       "options": "Housing/Communication",
       "description": "월세와 인터넷 요금입니다.",
@@ -87,21 +94,21 @@
       "id": "70f2"
     },
     {
-      "date": "2024-06-13",
+      "date": "2024-07-13",
       "price": "40,000원",
       "options": "Education",
       "description": "온라인 강의 수강료입니다.",
       "id": "5690"
     },
     {
-      "date": "2024-06-13",
+      "date": "2024-08-13",
       "price": "10,000원",
       "options": "Association Fees",
       "description": "동호회 회비입니다.",
       "id": "235f"
     },
     {
-      "date": "2024-06-13",
+      "date": "2024-09-13",
       "price": "5,000원",
       "options": "Others",
       "description": "기타 잡비입니다.",
