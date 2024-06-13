@@ -8,6 +8,7 @@ import ExchangeInput from "../views/transaction/ExchangeInput.vue"
 import Journey from "../views/journey/JourneyDefault.vue"
 import JouneyWrite from "../views/journey/JourneyWrite.vue"
 import Calendar from "../views/transaction/Calendar.vue"
+import TransactionList from "../views/transaction/TransactionList.vue"
 const routes = [
   {
     path: "/",
@@ -50,10 +51,15 @@ const routes = [
     component: JouneyWrite,
   },
   { // 캘린더 
-    path: "/travel/calendar", // 여기 바꾸기
+    path: "/transaction/calendar",
     name: "Calendar",
     component: Calendar,
-  }
+  },
+  { // 거래 내역
+    path: "/transaction/list",
+    name: "TransactionList",
+    component: TransactionList,
+  },
   
 ];
 

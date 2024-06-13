@@ -136,6 +136,11 @@
                   mini-icon="C"
                   text="Calendar"
                 />
+                <sidenav-item
+                :to="{ name: 'TransactionList' }"
+                  mini-icon="L"
+                  text="List"
+                />
               <sidenav-item
                   :to="{ name: 'IncomeInput' }"
                   mini-icon="I"
