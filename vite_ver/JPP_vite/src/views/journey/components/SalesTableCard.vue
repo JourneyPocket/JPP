@@ -58,15 +58,15 @@
   </div>
   <div class="p-3 pb-2 card mb-4">
     <div class="d-flex justify-content-between">
-      <h5 class="mb-0">Orders Table</h5>
+      <h5 class="mb-0">Places Table</h5>
     </div>
     <p class="text-sm mb-3">
-      View all the orders from the previous year.
+      Places I've Saved in the Countries I've Chosen.
     </p>
   </div>
 </template>
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, defineEmits } from 'vue';
 import { useSimpleStore } from '@/store/journeyJSON.js';
 import { storeToRefs } from 'pinia';
 import { RouterLink } from 'vue-router'
@@ -81,6 +81,7 @@ import GB from "@/assets/img/icons/flags/GB.png";
 import BR from "@/assets/img/icons/flags/BR.png";
 const simpleStore = useSimpleStore();
 const { exchangeList } = storeToRefs(simpleStore);
+const emit = defineEmits(['selected-country'])
 
 const updateFlag = (data) => {
   data.forEach(element => {
@@ -116,17 +117,14 @@ onMounted(() => {
         coords: [62.318222797104276, 89.81564777631716],
       },
       {
-        name: "China",
-        coords: [22.320178999475512, 114.17161225541399],
-        style: {
-          fill: "#E91E63",
-        },
+        name: "Japan",
+        coords: [27.7495886, 134.3918065],
       },
     ],
     onMarkerSelected: function (code, isSelected, selectedMarkers) {
-      console.log(code, isSelected, selectedMarkers);
+      // console.log(code, isSelected, selectedMarkers);
       if (code == 4) {
-        alert('you jin')
+        emit('selected-country', "JPN")
       }
     },
     markerStyle: {

@@ -17,6 +17,11 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
+      "/external-api": {
+        target: "https://www.koreaexim.go.kr",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/external-api/, ""),
+      }
     },
   },
 })
