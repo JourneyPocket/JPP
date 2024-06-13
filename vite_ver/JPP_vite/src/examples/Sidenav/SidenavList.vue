@@ -89,9 +89,9 @@
                   text="Analytics"
                 />
                 <sidenav-item
-                  to="Sales"
-                  mini-icon="S"
-                  text="Sales"
+                :to="{ name: 'Calendar' }"
+                  mini-icon="C"
+                  text="Calendar"
                 />
               
               <sidenav-collapse-item

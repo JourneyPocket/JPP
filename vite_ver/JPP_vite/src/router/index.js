@@ -7,6 +7,7 @@ import ConsumptionInput from "../views/transaction/ConsumptionInput.vue";
 import ExchangeInput from "../views/transaction/ExchangeInput.vue"
 import Jouney from "../views/journey/JourneyDefault.vue"
 import JouneyWrite from "../views/journey/JourneyWrite.vue"
+import Calendar from "../views/transaction/Calendar.vue"
 const routes = [
   {
     path: "/",
@@ -47,7 +48,13 @@ const routes = [
     path: "/journey/place",
     name: "Journey Write",
     component: JouneyWrite,
+  },
+  { // 캘린더 
+    path: "/journey/place", // 여기 바꾸기
+    name: "Calendar",
+    component: Calendar,
   }
+  
 ];
 
 const router = createRouter({
