@@ -24,7 +24,8 @@ C:\JPP\vue-material-dashboard-2-pro-v3.1.0\src\examples\Calendar.vue
 <script>
 import { Calendar } from "@fullcalendar/core";
 import dayGridPlugin from "@fullcalendar/daygrid";
-let calendar;
+import interactionPlugin from "@fullcalendar/interaction"; // 새로 추가된 부분
+
 export default {
   name: "Calendar",
   props: {
@@ -52,7 +53,7 @@ export default {
       type: String,
       default: "2024-06-11",
     },
-    events: {
+    events: { // fullcalendar 이벤트를 줄 때 사용하는 옵션
       type: Array,
       default: () => [
         {
@@ -85,9 +86,9 @@ export default {
     },
   },
   mounted() {
-    calendar = new Calendar(document.getElementById(this.id), {
+    const calendar = new Calendar(document.getElementById(this.id), {
       contentHeight: "auto",
-      plugins: [dayGridPlugin],
+      plugins: [dayGridPlugin, interactionPlugin],
       initialView: this.initialView,
       selectable: this.selectable,
       editable: this.editable,
@@ -102,6 +103,9 @@ export default {
         html: '<div class="custom-event">' + arg.event.title + '</div>',
         classNames: ['custom-event-container'],
       };
+    },
+    dateClick: (info) => { 
+      this.handleDateClick(info); 
     },
     //eventDidMount: function(arg) {
       // 이벤트가 렌더링된 후에 추가적인 조작을 수행할 수 있습니다.
@@ -137,6 +141,11 @@ export default {
     if (calendar) {
       calendar.destroy();
     }
+  },
+  methods: {
+    handleDateClick(info) { // 캘린더 날짜 클릭 시 호출
+      //alert('날짜 클릭됨: ' + info.dateStr); // info.dateStr 데이터 형태 : 2024-06-13
+    },
   },
 };
 </script>
