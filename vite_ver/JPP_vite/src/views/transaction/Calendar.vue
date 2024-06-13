@@ -137,14 +137,14 @@ export default {
 
     calendar.render();
   },
-  beforeUnmount() {
-    // if (calendar) {
-    //   calendar.destroy();
-    // }
-  },
+  // beforeUnmount() {
+  //   if (calendar) {
+  //     calendar.destroy();
+  //   }
+  // },
   methods: {
     handleDateClick(info) { // 캘린더 날짜 클릭 시 호출
-      //alert('날짜 클릭됨: ' + info.dateStr); // info.dateStr 데이터 형태 : 2024-06-13
+      //alert('날짜 클릭됨: ' + info.dateStr); // info.dateStr 데이터 형태 : 2024-06-13 
     },
   },
   
