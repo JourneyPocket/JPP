@@ -22,18 +22,22 @@
                   </div>
                 </div>
                 <div class="card-body">
-                  <form role="form" class="text-start mt-3">
-                    <div class="mb-3">
-                      <label for="incomeDate">Date</label>
-                      <material-input
+                  <form role="form" class="text-start mt-3" @submit.prevent="submit">
+                    <label for="incomeDate">Date</label>
+                    <div class="mb-3 input-group border ps-3 pe-3">
+                      <input
+                        v-mode="date"
+                        class="form-control"
                         id="dateInput"
                         type="date"                    
                         name="incomeDate"
                       />
                     </div>
-                    <div class="mb-3">
-                      <label for="amountInput">Price</label>
-                      <material-input
+                    <label for="amountInput">Price</label>
+                    <div class="mb-3 input-group border ps-3">
+                      <input
+                        v-model="price"
+                        class="form-control"
                         id="amountInput"
                         type="number"
                         label="Price"
@@ -47,10 +51,13 @@
                       </select>
                     </div>          
                     
-                    <div class="mb-3">
-                        <label for="desInput">Description</label>
-                        <material-input
-                            class="textarea-style"
+                    <label for="desInput">Description</label>
+                    <div class="mb-3 input-group border ps-3">
+                        
+                        <input
+                            v-model="description"
+                            placeholder="Please Write Memo"
+                            class="form-control"
                             id="desInput"
                             type="text"
                             label="Description"
@@ -135,43 +142,72 @@
       
     </template>
     
-    <script>
-    import MaterialInput from "@/components/MaterialInput.vue";
-    import MaterialButton from "@/components/MaterialButton.vue";
-    import { mapMutations } from "vuex";
-    
-    export default {
-      name: "ConsumptionInput",
-      data() {
-        return {
-          selectedConType: 'Food',
-          conTypes: ['Food', 'Transportation', 'Cultural Life', 'Fashion/Beauty',
-          'Housing/Communication', 'Health', 'Education', 'Association Fees', 'Others'
-        ]
-          
-        };
-      },
-
-      components: {
-        MaterialInput,
-        MaterialButton,
-      },
-      beforeMount() {
-        this.toggleEveryDisplay();
-        this.toggleHideConfig();
-      },
-      beforeUnmount() {
-        this.toggleEveryDisplay();
-        this.toggleHideConfig();
-      },
-    
-      methods: {
-        ...mapMutations(["toggleEveryDisplay", "toggleHideConfig"]),
-        Add() {
-    
-        }
-      },
+<script>
+import MaterialInput from "@/components/MaterialInput.vue";
+import MaterialButton from "@/components/MaterialButton.vue";
+import { mapMutations } from "vuex";
+import {ref} from 'vue';
+import axios from 'axios';
+export default {
+  name: "ConsumptionInput",
+  data() {
+    return {
+      selectedConType: 'Food',
+      conTypes: ['Food', 'Transportation', 'Cultural Life', 'Fashion/Beauty',
+      'Housing/Communication', 'Health', 'Education', 'Association Fees', 'Others'
+    ]
+      
     };
+  },
+  setup() {
+    const selectedConType=ref('Food');
+    const conTypes=ref(['Food', 'Transportation', 'Cultural Life', 'Fashion/Beauty',
+      'Housing/Communication', 'Health', 'Education', 'Association Fees', 'Others'
+    ])
+    const listUrl = "/api/consumption";
+    const date=ref("");
+    const price=ref(0);
+    const description=ref('');
+
+    const submit = async (e) => {
+      let newVal={
+        "date": date.value,
+        "price": price.value+'원',
+        "options": selectedConType.value,
+        "description": description.value
+      }
+      console.log(newVal)
+      alert('!')
+      try {
+        let response = await axios.post(listUrl, newVal)
+        
+      } catch(error) {
+        alert('에러발생');
+      }
+      
+    }
+    return {submit, selectedConType, conTypes, date, price, description}
+  },
+  components: {
+    MaterialInput,
+    MaterialButton,
+  },
+  beforeMount() {
+    this.toggleEveryDisplay();
+    this.toggleHideConfig();
+  },
+  beforeUnmount() {
+    this.toggleEveryDisplay();
+    this.toggleHideConfig();
+  },
+
+  methods: {
+    ...mapMutations(["toggleEveryDisplay", "toggleHideConfig"]),
+    Add() {
+
+    }
+  },
+};
 </script>
 <style>
 .bg-gradient-con {
