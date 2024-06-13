@@ -84,9 +84,9 @@
             <ul class="nav pe-1">
               <!-- nav links -->
               <sidenav-item
-                  to="Default"
-                  mini-icon="D"
-                  text="Analytics"
+                  :to="{name: 'JourneyMain'}"
+                  mini-icon="J"
+                  text="Journey"
                 />
                 <sidenav-item
                 :to="{ name: 'Calendar' }"

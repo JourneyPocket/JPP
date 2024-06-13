@@ -34,7 +34,6 @@
 </template>
 <script>
 import SidenavList from "./SidenavList.vue";
-// import logo from "@/assets/img/logo-ct.png";
 import logo from "@/assets/img/logos/top_logo.png"
 import logoDark from "@/assets/img/logo-ct-dark.png";
 import { mapState } from "vuex";
