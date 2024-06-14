@@ -1,7 +1,7 @@
 <template>
     <div class="d-block d-sm-flex align-items-center py-4 ps-4 border-bottom"><a
             class="d-block mb-3 mb-sm-0 me-sm-4 ms-sm-0 mx-auto" href="marketplace-single.html"
-            style="width: 12.5rem;"><img class="rounded-3" src="../../../assets/img/apple-icon.png" alt="Product"></a>
+            style="width: 12.5rem;"><img class="rounded-3" v-bind:src="place.img" alt="Product" style="width: 200px;"></a>
         <div class="text-center text-sm-start">
             <h3 class="h6 product-title mb-2"><a v-bind:href="place.link">{{ place.link }}</a>
             </h3>

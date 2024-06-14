@@ -6,8 +6,8 @@
           <!-- Title-->
           <div class="d-sm-flex flex-wrap justify-content-between align-items-center border-bottom">
             <h2 class="h3 py-2 me-2 text-center text-sm-start">Your Saved Places<span
-                class="badge bg-faded-accent fs-sm text-body align-middle ms-2">{{ count }}</span></h2>
-            <h3>{{ country }}</h3>
+                class="badge bg-faded-accent fs-sm text-body align-middle ms-2">{{ filteredPlaceList.length }}</span>
+            </h2>
             <div class="py-2">
               <div class="d-flex flex-nowrap align-items-center pb-3">
                 <label class="form-label fw-normal text-nowrap mb-0 me-2" for="sorting">Sort by:</label>
@@ -21,7 +21,7 @@
               </div>
             </div>
           </div>
-          <Places v-for="place in placeList" :place="place"></Places>
+          <Places v-for="place in filteredPlaceList" :place="place"></Places>
         </div>
       </section>
     </div>
@@ -30,19 +30,25 @@
 
 <script setup>
 import Places from './Places.vue';
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import { useSimpleStore } from '@/store/journeyJSON.js';
 
 const { fetchPlaceList, fetchExternalAPIExchageList } = useSimpleStore();
 
-const placeList = ref('')
+const placeList = ref([])
 const count = ref(0)
 const exchange = ref([])
+
+const props = defineProps({
+  country: {
+    type: String,
+  }
+});
+
 
 // 저장된 장소 불러옴
 const getList = async () => {
   await fetchPlaceList(placeList)
-  count.value = placeList.value.length
 }
 
 
@@ -52,21 +58,16 @@ const getExchange = async () => {
   console.log(exchange.value)
 }
 
-const props = defineProps({
-  country: {
-    type: String,
-  }
+// 필터링된 리스트를 계산합니다.
+const filteredPlaceList = computed(() => {
+  return Array.isArray(placeList.value)
+    ? placeList.value.filter(place => place.country === props.country)
+    : [];
 });
-
-console.log(props)
 
 onMounted(() => {
   getList()
-  getExchange()
-})
-
-
-
-
+  // getExchange()
+});
 
 </script>

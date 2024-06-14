@@ -435,7 +435,7 @@
       "country_code": "EU",
       "date": "2023-12-09",
       "id": "fe88",
-      "flag": ""
+      "flag": "AU"
     },
     {
       "global_money": 1586,
@@ -443,7 +443,7 @@
       "country_code": "JP",
       "date": "2024-03-29",
       "id": "9ae4",
-      "flag": ""
+      "flag": "BR"
     },
     {
       "global_money": 2014,
@@ -451,7 +451,7 @@
       "country_code": "US",
       "date": "2023-09-05",
       "id": "5777",
-      "flag": ""
+      "flag": "US"
     },
     {
       "global_money": 403,
@@ -459,7 +459,7 @@
       "country_code": "AU",
       "date": "2024-03-23",
       "id": "5dd5",
-      "flag": ""
+      "flag": "US"
     },
     {
       "global_money": 2585,
@@ -467,7 +467,7 @@
       "country_code": "US",
       "date": "2023-08-17",
       "id": "1bd9",
-      "flag": ""
+      "flag": "AU"
     }
   ],
   "savedPlace": [
@@ -476,9 +476,10 @@
       "link": "https://maps.google.com/?q=Tokyo+Tower",
       "reason": "도쿄의 상징",
       "date": "2024-02-22",
-      "country" : "JPN",
+      "country": "Japan",
       "category": "Entertainment",
       "priority": "Top of the List",
+      "img" : "https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/59032d2d-b414-44aa-b2c2-3c5a43852fed.jpeg",
       "id": "a14f"
     },
     {
@@ -486,9 +487,10 @@
       "link": "https://maps.google.com/?q=Times+Square",
       "reason": "뉴욕의 중심",
       "date": "2023-07-17",
-      "country" : "USA",
+      "country": "USA",
       "category": "Entertainment",
       "priority": "Can't Miss",
+      "img" : "https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/59032d2d-b414-44aa-b2c2-3c5a43852fed.jpeg",
       "id": "c60c"
     },
     {
@@ -496,9 +498,10 @@
       "link": "https://maps.google.com/?q=Shibuya+Crossing",
       "reason": "번화한 교차로",
       "date": "2023-11-25",
-      "country" : "JPN",
+      "country": "Japan",
       "category": "Shopping",
       "priority": "Would Love to See",
+      "img" : "https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/59032d2d-b414-44aa-b2c2-3c5a43852fed.jpeg",
       "id": "2fde"
     },
     {
@@ -506,9 +509,10 @@
       "link": "https://maps.google.com/?q=Golden+Gai",
       "reason": "작은 술집 거리",
       "date": "2024-05-25",
-      "country" : "USA",
+      "country": "USA",
       "category": "Entertainment",
       "priority": "Top of the List",
+      "img" : "https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/59032d2d-b414-44aa-b2c2-3c5a43852fed.jpeg",
       "id": "1334"
     },
     {
@@ -516,9 +520,10 @@
       "link": "https://maps.google.com/?q=Shinjuku+Gyoen",
       "reason": "아름다운 정원",
       "date": "2023-11-29",
-      "country" : "JPN",
+      "country": "Japan",
       "category": "Other",
       "priority": "If There's Time",
+      "img" : "https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/59032d2d-b414-44aa-b2c2-3c5a43852fed.jpeg",
       "id": "0cae"
     },
     {
@@ -526,9 +531,10 @@
       "link": "https://maps.google.com/?q=Statue+of+Liberty",
       "reason": "자유의 상징",
       "date": "2023-12-11",
-      "country" : "USA",
+      "country": "USA",
       "category": "Entertainment",
       "priority": "Top of the List",
+      "img" : "https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/59032d2d-b414-44aa-b2c2-3c5a43852fed.jpeg",
       "id": "bf7c"
     },
     {
@@ -536,9 +542,10 @@
       "link": "https://maps.google.com/?q=Akihabara",
       "reason": "전자제품 천국",
       "date": "2024-05-09",
-      "country" : "JPN",
+      "country": "Japan",
       "category": "Shopping",
       "priority": "Can't Miss",
+      "img" : "https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/59032d2d-b414-44aa-b2c2-3c5a43852fed.jpeg",
       "id": "0d35"
     },
     {
@@ -546,9 +553,10 @@
       "link": "https://maps.google.com/?q=Brooklyn+Bridge",
       "reason": "뉴욕의 명소",
       "date": "2024-04-24",
-      "country" : "USA",
+      "country": "USA",
       "category": "Other",
       "priority": "Would Love to See",
+      "img" : "https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/59032d2d-b414-44aa-b2c2-3c5a43852fed.jpeg",
       "id": "1ad6"
     },
     {
@@ -557,9 +565,10 @@
       "link": "https://maps.google.com/?q=Odaiba",
       "reason": "도쿄의 해변",
       "date": "2024-11-03",
-      "country" : "JPN",
+      "country": "Japan",
       "category": "Entertainment",
-      "priority": "If There's Time"
+      "priority": "If There's Time",
+      "img" : "https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/59032d2d-b414-44aa-b2c2-3c5a43852fed.jpeg"
     },
     {
       "id": "3abc",
@@ -567,9 +576,10 @@
       "link": "https://maps.google.com/?q=Central+Park",
       "reason": "뉴욕의 공원",
       "date": "2024-11-03",
-      "country" : "USA",
+      "country": "USA",
       "category": "Other",
-      "priority": "Maybe Someday"
+      "priority": "Maybe Someday",
+      "img" : "https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/59032d2d-b414-44aa-b2c2-3c5a43852fed.jpeg"
     }
   ]
 }

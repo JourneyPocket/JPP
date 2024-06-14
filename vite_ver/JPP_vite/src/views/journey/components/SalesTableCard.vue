@@ -10,7 +10,7 @@
         </div>
         <div class="card-body p-3">
           <div class="row">
-            <div id="map-wrap" style="height: 360px;">
+            <div id="map-wrap" class="mx-auto" style="height: 360px; width: 500px;">
               <div id="map" class="mt-0 mt-lg-n4"></div>
             </div>
           </div>
@@ -83,22 +83,24 @@ const simpleStore = useSimpleStore();
 const { exchangeList } = storeToRefs(simpleStore);
 const emit = defineEmits(['selected-country'])
 
-const updateFlag = (data) => {
-  data.forEach(element => {
-    element.flag = US
-  });
-}
+const flags = [AU, US, DE, GB, BR]
+
+// const updateFlag = (data) => {
+//   data.map((f) => { 
+//     flags.filter()
+//     f.flag = })
+// }
 
 onMounted(() => {
-  updateFlag(exchangeList.value);
+  // updateFlag(exchangeList.value);
   // eslint-disable-next-line no-undef
   const map = new jsVectorMap({
     selector: "#map",
     map: "world_merc",
     zoomOnScroll: false,
     zoomButtons: false,
-    selectedMarkers: [1, 3],
     markersSelectable: true,
+    markersSelectableOne: true,
     markers: [
       {
         name: "USA",
@@ -121,25 +123,29 @@ onMounted(() => {
         coords: [27.7495886, 134.3918065],
       },
     ],
+    labels: {
+      markers: {
+        render(marker, index) {
+          return marker.name || marker.labelName || 'Not available'
+        }
+      }
+    },
     onMarkerSelected: function (code, isSelected, selectedMarkers) {
-      // console.log(code, isSelected, selectedMarkers);
-      if (code == 4) {
-        emit('selected-country', "JPN")
+      if (isSelected) {
+        emit('selected-country', this.markers[code].config.name)
       }
     },
     markerStyle: {
       initial: {
-        fill: "#e91e63",
+        fill: "#1ee9a4",
       },
       hover: {
-        fill: "E91E63",
+        fill: "#E91E63",
       },
       selected: {
-        fill: "E91E63",
+        fill: "#E91E63",
       },
     },
   });
 });
-
-
 </script>
