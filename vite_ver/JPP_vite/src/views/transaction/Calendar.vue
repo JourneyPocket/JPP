@@ -58,24 +58,6 @@ export default {
     events: { // fullcalendar 이벤트를 줄 때 사용하는 옵션
       type: Array,
       default: () => [
-        {
-          title: "ss",
-          start: "2024-06-13",
-          end: "2024-06-13",
-          className: "expenditure",
-        },
-        {
-          title: "산삼이조에요",
-          start: "2024-06-13",
-          end: "2024-06-13",
-          className: "expenditure",
-        },
-        {
-          title: "헤헷콩",
-          start: "2024-06-13",
-          end: "2024-06-13",
-          className: "income",
-        },
       ],
     },
     selectable: {
@@ -109,7 +91,7 @@ export default {
             }
             this.events.push(newEvent);
           
-          })              
+          })
 
         } catch(error) {
           console.log(error);
@@ -163,6 +145,7 @@ export default {
     },
     dateClick: (info) => { 
       this.handleDateClick(info); 
+      // alert('클릭했습니다.');
     },
     //eventDidMount: function(arg) {
       // 이벤트가 렌더링된 후에 추가적인 조작을 수행할 수 있습니다.
