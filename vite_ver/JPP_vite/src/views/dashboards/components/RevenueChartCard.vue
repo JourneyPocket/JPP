@@ -29,13 +29,12 @@
 
 <script setup>
 import DefaultLineChart from "@/examples/Charts/DefaultLineChart.vue";
-import { ref, onBeforeMount, onMounted, onUpdated } from 'vue';
+import { ref } from 'vue';
 import axios from 'axios';
 
 
 const incomeList = ref([]);
 const consumptionList = ref([]);
-const totalPrice = ref(0);
 const monthlyTotalPrice = ref([]);
 const monthlyTotalConsume = ref([]);
 const isLoading = ref(true);
@@ -47,28 +46,28 @@ let incomeDateList = [];
 let conDateList = [];
 
 const chartInfo = ({
-  labels: [
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
-  ],
-  datasets: [
-    {
-      label: 'Revenue',
-      data: [9,8,7,6,5,4,3,2,1],
-    },
-    {
-      label: 'Consume',
-      data: [1,2,3,4,5,6,7,8,9],
-    },
-  ],
-});
+      labels: [
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec',
+      ],
+      datasets: [
+        {
+          label: 'Revenue',
+          data: [700000,650000,320000,540000,640000,430000,540000,640000,430000,],
+        },
+        {
+          label: 'Consume',
+          data: [60000,640000,280000,500000,940000,300000,200000,400000,530000,],
+        },
+      ],
+    });
 
 const getIncomeList = async (e) => {
   const params = {};
@@ -113,6 +112,7 @@ const getIncomeList = async (e) => {
     monthlyTotalPrice.value[currentMonth] = currentTotalPrice;
     console.log(monthlyTotalPrice.value);
     isLoading.value = false;
+
   } catch (error) {
     console.log(error);
     alert("에러발생");
