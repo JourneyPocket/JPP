@@ -1,27 +1,6 @@
 {
   "income": [
     {
-      "date": "2024-01-13",
-      "price": "100,000원",
-      "options": "salary",
-      "description": "월급으로 받는 소득입니다.",
-      "id": "2206"
-    },
-    {
-      "date": "2024-02-13",
-      "price": "50,000원",
-      "options": "pin money",
-      "description": "용돈으로 받은 금액입니다.",
-      "id": "80f1"
-    },
-    {
-      "date": "2024-03-13",
-      "price": "200,000원",
-      "options": "financial income",
-      "description": "금융 소득에서 발생한 금액입니다.",
-      "id": "66c7"
-    },
-    {
       "date": "2024-04-13",
       "price": "150,000원",
       "options": "other",
@@ -58,20 +37,6 @@
     }
   ],
   "consumption": [
-    {
-      "date": "2024-01-13",
-      "price": "20,000원",
-      "options": "Food",
-      "description": "점심 식사 비용입니다.",
-      "id": "434c"
-    },
-    {
-      "date": "2024-02-13",
-      "price": "15,000원",
-      "options": "Transportation",
-      "description": "버스와 지하철 요금입니다.",
-      "id": "8d23"
-    },
     {
       "date": "2024-03-13",
       "price": "50,000원",
@@ -193,28 +158,12 @@
       "toMoney": "1,000 USD"
     },
     {
-      "id": "578a",
-      "date": "",
-      "fromCountry": "Afghanistan",
-      "toCountry": "Burundi",
-      "fromMoney": 13333,
-      "toMoney": 13333
-    },
-    {
-      "id": "e6ae",
-      "date": "",
+      "id": "8805",
+      "date": "2024-06-11",
       "fromCountry": "Angola",
-      "toCountry": "Belarus",
-      "fromMoney": 13,
-      "toMoney": 13
-    },
-    {
-      "id": "44d7",
-      "date": "",
-      "fromCountry": "Korea",
       "toCountry": "USA",
-      "fromMoney": 0,
-      "toMoney": 0
+      "fromMoney": 1000,
+      "toMoney": 1000
     }
   ],
   "countryCode": {

@@ -231,15 +231,15 @@ export default {
       }
       // console.log(newVal)
       // alert('!')
-      if (isValidDateFormat(newVal.date)) {
+      if (!isValidDateFormat(newVal.date)) {
       
         console.log(newVal.date)
         isFailed.value=true;          
         if(isFailed.value) {
-            setTimeout(()=> {
-              isFailed.value=!isFailed.value;
-            }, 1500);
-          }
+          setTimeout(()=> {
+            isFailed.value=!isFailed.value;
+          }, 1500);
+        }
         return
        }
       try {

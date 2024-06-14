@@ -74,12 +74,12 @@
                 <div class="container">
                   <div class="row">
                     <div class="col">
-                      <button class="btn btn-success" @click="backBtn">Back</button>
+                      <button class="btn btn-success px-5" @click="backBtn">Back</button>
                     </div>
                 
                     <div class="col text-center">
                       <button                
-                        class="btn btn-success"              
+                        class="btn btn-success px-6"              
                         >Add
                         </button>
                     </div>
@@ -222,7 +222,7 @@ export default {
             }, 1500);
           }
         return
-       }
+      }
         
       
       try {
@@ -234,11 +234,11 @@ export default {
           if(isAdd.value) {
             setTimeout(()=> {
               isAdd.value=!isAdd.value;
-            }, 1500);
+            }, 1500);                
           }          
 
           // 달력 페이지로 이동
-          router.push('/transaction/calendar');
+          router.push('/transaction/calendar')
           
         }
       } catch(error) {
@@ -273,8 +273,6 @@ export default {
 
   methods: {
     ...mapMutations(["toggleEveryDisplay", "toggleHideConfig"]),
-    
-    
   },
   
 };
