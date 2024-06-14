@@ -48,6 +48,97 @@
       "price": "100000원",
       "options": " financial income",
       "description": "돈벌었다"
+    },
+    {
+      "id": "3c1d",
+      "date": "2024-06-18",
+      "price": "1550원",
+      "options": "pin money",
+      "description": "월급이용"
+    },
+    {
+      "id": "c087",
+      "date": "2024-06-11",
+      "price": "100원",
+      "options": "salary",
+      "description": "hihihi"
+    },
+    {
+      "id": "1a90",
+      "date": "2024-06-11",
+      "price": "20000원",
+      "options": " other",
+      "description": "dadad"
+    },
+    {
+      "id": "1d9a",
+      "date": "2024-06-11",
+      "price": "231313원",
+      "options": " other",
+      "description": "hoho"
+    },
+    {
+      "id": "c4b8",
+      "date": "2024-06-11",
+      "price": "231313원",
+      "options": " other",
+      "description": "hoho"
+    },
+    {
+      "id": "4681",
+      "date": "2024-06-27",
+      "price": "300원",
+      "options": "salary",
+      "description": "용돈벌이"
+    },
+    {
+      "id": "b46b",
+      "date": "2024-06-27",
+      "price": "300원",
+      "options": "salary",
+      "description": "용돈벌이"
+    },
+    {
+      "id": "5ee1",
+      "date": "2024-06-04",
+      "price": "0원",
+      "options": "salary",
+      "description": ""
+    },
+    {
+      "id": "da84",
+      "date": "2024-06-04",
+      "price": "0원",
+      "options": "salary",
+      "description": ""
+    },
+    {
+      "id": "7e4e",
+      "date": "2024-06-10",
+      "price": "5원",
+      "options": "pin money",
+      "description": "아싸"
+    },
+    {
+      "id": "1071",
+      "date": "2024-06-19",
+      "price": "5원",
+      "options": "pin money",
+      "description": "아싸"
+    },
+    {
+      "id": "01f8",
+      "date": "2024-05-30",
+      "price": "2원",
+      "options": "salary",
+      "description": ""
+    },
+    {
+      "id": "b87a",
+      "date": "2024-06-20",
+      "price": "22원",
+      "options": "salary",
+      "description": "dad"
     }
   ],
   "consumption": [
@@ -127,6 +218,27 @@
       "price": "3000원",
       "options": "Cultural Life",
       "description": "배고프다.."
+    },
+    {
+      "id": "1456",
+      "date": "",
+      "price": "0원",
+      "options": "Food",
+      "description": ""
+    },
+    {
+      "id": "c18e",
+      "date": "2024-06-19",
+      "price": "212312원",
+      "options": "Transportation",
+      "description": "bus ss"
+    },
+    {
+      "id": "cc17",
+      "date": "",
+      "price": "0원",
+      "options": "Food",
+      "description": ""
     }
   ],
   "exchange": [
@@ -193,6 +305,38 @@
       "toCountry": "Belarus",
       "fromMoney": 13,
       "toMoney": 13
+    },
+    {
+      "id": "c108",
+      "date": "2024-06-14",
+      "fromCountry": "Korea",
+      "toCountry": "USA",
+      "fromMoney": 0,
+      "toMoney": 0
+    },
+    {
+      "id": "912e",
+      "date": "2024-06-17",
+      "fromCountry": "Andorra",
+      "toCountry": "Australia",
+      "fromMoney": 1220,
+      "toMoney": 1220
+    },
+    {
+      "id": "14de",
+      "date": "",
+      "fromCountry": "Korea",
+      "toCountry": "USA",
+      "fromMoney": 0,
+      "toMoney": 0
+    },
+    {
+      "id": "5f57",
+      "date": "",
+      "fromCountry": "Korea",
+      "toCountry": "USA",
+      "fromMoney": 0,
+      "toMoney": 0
     }
   ],
   "countryCode": {

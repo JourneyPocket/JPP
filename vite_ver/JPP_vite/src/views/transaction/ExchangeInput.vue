@@ -6,6 +6,10 @@
           background-image: url(&quot;https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80&quot;);
         "
       >
+      <transition-group name="slide">
+        <success-notifications class="position-absolute bottom-10 start-50 z-index-1" v-show="isAdd"/>
+        <fail-notifications class="position-absolute bottom-10 start-50 z-index-2" v-show="isFailed"/>
+      </transition-group>
         <span class="mask bg-gradient-dark opacity-6"></span>
         <div class="container my-auto">
           <div class="row">
@@ -26,6 +30,7 @@
                     <label for="incomeDate">Date</label>
                     <div class="mb-3 input-group border ps-3 pe-3">
                       <input
+                        v-model="date"
                         class="form-control"
                         id="dateInput"
                         type="date"                    
@@ -79,16 +84,24 @@
                         </div>
                     
                     </div>
-
-                    <div class="text-center col">
-                        <material-button
-                            class="my-4 mb-2"
+                    <div class="container">
+                      <div class="row">
+                        <div class="col">
+                          <button class="btn btn-primary px-6">
+                            back
+                          </button>
+                        </div>
+                        <div class="text-center col">
+                        <material-button                            
                             variant="gradient"
                             color="primary"
                             full-width
                             >Exchange</material-button
-                        >
+                            >
+                        </div>
+                      </div>
                     </div>
+                    
                     
                   </form>
                 </div>
@@ -160,9 +173,12 @@
     import MaterialInput from "@/components/MaterialInput.vue";
     import MaterialButton from "@/components/MaterialButton.vue";
     import countrieCodes from '@/assets/json/countryCode.json';
+    import SuccessNotifications from "../pages/SuccessNotifications.vue";
+    import FailNotifications from "../pages/FailNotifications.vue";
     import { mapMutations } from "vuex";
     import {ref} from 'vue';
     import axios from 'axios';
+    import {useRouter} from 'vue-router';
 
     export default {
       name: "ExchangeInput",
@@ -175,9 +191,43 @@
         const toAmount= ref(0);
         const date=ref("");
         const listUrl = "/api/exchange";
-        
+        const isAdd=ref(false);
+        const isFailed=ref(false);
+        const router= useRouter();
 
-        const submit = async (e) => {
+
+        //date 형식이 맞는지 확인하는 함수
+        const isValidDateFormat=(dateString)=> {
+          const regex = /^\d{4}-\d{2}-\d{2}$/;
+          if (!regex.test(dateString)) {
+            return false;
+          }
+          
+          // 'yyyy-mm-dd' 형식에 맞게 분리
+          const [year, month, day] = dateString.split('-').map(Number);
+          
+          // 월과 일이 올바른 범위에 있는지 확인
+          if (month < 1 || month > 12 || day < 1 || day > 31) {
+            return false;
+          }
+          if (month === 2) {
+            const isLeapYear = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+            if (day > (isLeapYear ? 29 : 28)) {
+              return false;
+            }
+          }
+
+          if ([4, 6, 9, 11].includes(month) && day > 30) {
+            return false;
+          }
+
+          return true;
+        }
+        const backBtn=()=> {
+          router.push('/transaction/calendar');
+        }
+
+        const submit = async (e) => {          
           let newVal={
             "date": date.value,
             "fromCountry": selectedFromCountry.value,
@@ -185,17 +235,46 @@
             "fromMoney": fromAmount.value,
             "toMoney": toAmount.value,
           }
-          console.log(newVal)
-          alert('!')
+          
+  
+          // alert('!')
+          if (isValidDateFormat(newVal.date)) {
+            
+            isFailed.value=true;          
+            if(isFailed.value) {
+                setTimeout(()=> {
+                  isFailed.value=!isFailed.value;
+                }, 1500);
+              }
+            return
+          }
           try {
             let response = await axios.post(listUrl, newVal)
-            
+            if (response.data) {
+              isAdd.value=true;
+              if(isAdd.value) {
+                setTimeout(()=> {
+                  isAdd.value=!isAdd.value;
+                }, 1500);
+              }          
+
+              // 달력 페이지로 이동
+              router.push('/transaction/calendar');
+              
+            }
           } catch(error) {
             alert('에러발생');
+            
+            isFailed.value=true;          
+            if(isFailed.value) {
+              setTimeout(()=> {
+                isFailed.value=!isFailed.value;
+              }, 1500);
+            }
           }
           
         }
-        return {submit, selectedFromCountry, selectedToCountry, countryTypes, fromAmount, toAmount}
+        return {backBtn, isAdd, isFailed, submit, selectedFromCountry, selectedToCountry, countryTypes, fromAmount, toAmount, date}
       },
       watch: {
         //여기에 api 가져와서 from -> to 환율 계산
@@ -214,6 +293,8 @@
       components: {
         MaterialInput,
         MaterialButton,
+        SuccessNotifications,
+        FailNotifications
       },
       beforeMount() {
         this.toggleEveryDisplay();
@@ -235,3 +316,41 @@
     };
     </script>
     
+<style>
+.slide-enter {
+  transform: translateX(-100%);
+}
+.slide-enter-active {
+  animation: slide-in 1s ease-out backwards;
+  transition: opacity .5s transform 1s;
+}
+
+.slide-leave {
+  transform: translateX(0);
+}
+
+.slide-leave-active {
+  animation: slide-out 1s ease-out forwards;
+  transition: opacity .5s transform 1s;
+  opacity: 0;
+}
+
+@keyframe slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframe slide-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+</style>
