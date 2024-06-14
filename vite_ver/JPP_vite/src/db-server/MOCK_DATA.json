@@ -48,6 +48,20 @@
       "price": "100000원",
       "options": " financial income",
       "description": "돈벌었다"
+    },
+    {
+      "id": "725d",
+      "date": "2024-06-09",
+      "price": "1000원",
+      "options": "pin money",
+      "description": "dad"
+    },
+    {
+      "id": "97fd",
+      "date": "2024-06-20",
+      "price": "0원",
+      "options": "salary",
+      "description": ""
     }
   ],
   "consumption": [
@@ -177,30 +191,6 @@
       "toCountry": "United States",
       "fromMoney": "1,200,000 KRW",
       "toMoney": "1,000 USD"
-    },
-    {
-      "id": "578a",
-      "date": "",
-      "fromCountry": "Afghanistan",
-      "toCountry": "Burundi",
-      "fromMoney": 13333,
-      "toMoney": 13333
-    },
-    {
-      "id": "e6ae",
-      "date": "",
-      "fromCountry": "Angola",
-      "toCountry": "Belarus",
-      "fromMoney": 13,
-      "toMoney": 13
-    },
-    {
-      "id": "44d7",
-      "date": "",
-      "fromCountry": "Korea",
-      "toCountry": "USA",
-      "fromMoney": 0,
-      "toMoney": 0
     }
   ],
   "countryCode": {

@@ -21,7 +21,7 @@
                   >
                   
                     <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">
-                      Income Input
+                      Exchange Input
                     </h4>
                   </div>
                 </div>
@@ -220,14 +220,15 @@
           if ([4, 6, 9, 11].includes(month) && day > 30) {
             return false;
           }
-
+          console.log("date")
           return true;
         }
         const backBtn=()=> {
           router.push('/transaction/calendar');
         }
 
-        const submit = async (e) => {          
+        const submit = async (e) => { 
+
           let newVal={
             "date": date.value,
             "fromCountry": selectedFromCountry.value,
@@ -238,7 +239,7 @@
           
   
           // alert('!')
-          if (isValidDateFormat(newVal.date)) {
+          if (!isValidDateFormat(newVal.date)) {
             
             isFailed.value=true;          
             if(isFailed.value) {
