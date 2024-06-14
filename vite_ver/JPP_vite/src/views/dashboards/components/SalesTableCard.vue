@@ -1,9 +1,7 @@
 <template>
   <div class="card mb-4">
     <div class="d-flex">
-      <div
-        class="icon icon-shape icon-lg bg-gradient-success shadow text-center border-radius-xl mt-n3 ms-4"
-      >
+      <div class="icon icon-shape icon-lg bg-gradient-success shadow text-center border-radius-xl mt-n3 ms-4">
         <i class="material-icons opacity-10" aria-hidden="true">language</i>
       </div>
       <h6 class="mt-3 mb-2 ms-3">{{ title }}</h6>
@@ -14,10 +12,7 @@
           <div class="table-responsive">
             <table class="table align-items-center">
               <tbody>
-                <tr
-                  v-for="({ country, Currency, Rate, Fluctuation }, index) of rows"
-                  :key="index"
-                >
+                <tr v-for="({ country, Currency, Buy, Sell, Rate }, index) of rows" :key="index">
                   <td class="w-30">
                     <div class="px-2 py-1 d-flex align-items-center">
                       <div>
@@ -41,17 +36,25 @@
                   </td>
                   <td>
                     <div class="text-center">
-                      <p class="mb-0 text-xs font-weight-bold">Rate:</p>
+                      <p class="mb-0 text-xs font-weight-bold">Buy:</p>
                       <h6 class="mb-0 text-sm font-weight-normal">
-                        {{ Rate }}
+                        {{ Buy }}
+                      </h6>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="text-center">
+                      <p class="mb-0 text-xs font-weight-bold">Sell:</p>
+                      <h6 class="mb-0 text-sm font-weight-normal">
+                        {{ Sell }}
                       </h6>
                     </div>
                   </td>
                   <td class="text-sm align-middle">
                     <div class="text-center col">
-                      <p class="mb-0 text-xs font-weight-bold">Fluctuation:</p>
+                      <p class="mb-0 text-xs font-weight-bold">Rate:</p>
                       <h6 class="mb-0 text-sm font-weight-normal">
-                        {{ Fluctuation }}
+                        {{ Rate }}
                       </h6>
                     </div>
                   </td>
@@ -102,25 +105,25 @@ export default {
           coords: [40.71296415909766, -74.00437720027804],
         },
         {
-          name: "Germany",
-          coords: [51.17661451970939, 10.97947735117339],
+          name: "EUR",
+          coords: [41.9102088, 12.3711917],
         },
         {
-          name: "Brazil",
-          coords: [-7.596735421549542, -54.781694323779185],
+          name: "Great Britain",
+          coords: [53.4722462, -2.379346],
         },
         {
-          name: "Russia",
-          coords: [62.318222797104276, 89.81564777631716],
-        },
-        {
-          name: "China",
-          coords: [22.320178999475512, 114.17161225541399],
-          style: {
-            fill: "#E91E63",
-          },
-        },
+          name: "Australia",
+          coords: [-33.8461025, 150.3081819]
+        }
       ],
+      labels: {
+        markers: {
+          render(marker, index) {
+            return marker.name || marker.labelName || 'Not available'
+          }
+        }
+      },
       markerStyle: {
         initial: {
           fill: "#e91e63",

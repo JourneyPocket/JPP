@@ -35,16 +35,7 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
-                                <label class="mt-4 ms-0">Description</label>
-                                <p class="text-xs form-text text-muted ms-1 d-inline">
-                                    (optional)
-                                </p>
-                                <div id="edit-description-edit" class="h-50">
-                                    
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <label class="mt-4 ms-0">Category</label>
+                                <label class="ms-0 mt-4">Category</label>
                                 <select id="choices-category-edit" v-model="category" class="form-control"
                                     name="choices-category">
                                     <option value="" selected> choice!</option>
@@ -53,15 +44,34 @@
                                     <option value="Shopping">Shopping</option>
                                     <option value="Other">Other</option>
                                 </select>
-                                <label class="mt-2 ms-0">Priority</label>
+
+                                <label class="ms-0">Country</label>
+                                <select id="choices-country-edit" v-model="country" class="form-control"
+                                    name="choices-category">
+                                    <option value="" selected> choice!</option>
+                                    <option value="Japan">Japan</option>
+                                    <option value="USA">USA</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="Russia">Russia</option>
+                                    <option value="Brazil">Brazil</option>
+                                    <option value="South Korea">South Korea</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="mt-4 ms-0">Priority</label>
                                 <select id="choices-color-edit" v-model="priority" class="form-control"
                                     name="choices-category">
-                                    <option value="Top of the List" selected>Top of the List</option>
+                                    <option value="" selected> choice!</option>
+                                    <option value="Top of the List">Top of the List</option>
                                     <option value="Can't Miss">Can't Miss</option>
                                     <option value="Would Love to See">Would Love to See</option>
                                     <option value="If There's Time">If There's Time</option>
                                     <option value="Maybe Someday">Maybe Someday</option>
                                 </select>
+                                <div class="mt-5">
+                                    <material-input id="img" variant="dynamic" name="img" v-model:value="img"
+                                        label="Place's Image Link" />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -74,25 +84,22 @@
                     <div class="col-lg-6 col-sm-6 col-12">
                         <button class="btn bg-gradient-success w-100 mb-0 toast-btn" type="button"
                             data-target="successToast" @click="submit">
-                            Success
+                            Save
                         </button>
                     </div>
                     <div class="col-lg-6 col-sm-6 col-12 mt-lg-0 mt-2">
                         <button class="btn bg-gradient-warning w-100 mb-0 toast-btn" type="button"
-                            data-target="warningToast" @click="snackbar = 'warning'">
-                            Warning
+                            data-target="warningToast" @click="router.push('/journey')">
+                            Back
                         </button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="position-fixed bottom-1 end-1 z-index-2">
-            <material-snackbar v-if="snackbar === 'success'" title="Material Dashboard" date="11 mins ago"
-                description="Hello, world! This is a notification message."
-                :icon="{ component: 'done', color: 'white' }" color="success" @click="closeSnackbar" />
-            <material-snackbar v-if="snackbar === 'warning'" title="Material Dashboard" date="11 mins ago"
-                description="Hello, world! This is a notification message."
-                :icon="{ component: 'travel_explore', color: 'white' }" color="warning" @click="closeSnackbar" />
+            <material-snackbar v-if="snackbar === 'success'" title="Material Dashboard" date="2 seconds.."
+                description="저장 중 입니다." :icon="{ component: 'done', color: 'white' }" color="success"
+                @click="closeSnackbar" />
         </div>
     </div>
 </template>
@@ -123,20 +130,42 @@ const reason = ref('')
 const date = ref('')
 const category = ref('')
 const priority = ref('')
-const description = ref('')
+const country = ref('')
+const img = ref('')
 
 const submit = async () => {
     try {
+
+        if (name.value === '') {
+            alert('여행지명을 입력하세요')
+            return;
+        } else if (link.value === '') {
+            alert('여행지 관련 링크를 입력하세요')
+            return;
+        }
+
+        if (img.value == '') {
+            img.value = "https://oimg1.kbstar.com/img/omweb/new/main_banner_9to6_v2.png"
+        }
+
         const place = {
             "name": name.value,
             "link": link.value,
             "reason": reason.value,
             "date": date.value,
+            "country": country.value,
             "category": category.value,
-            "priority": priority.value
+            "priority": priority.value,
+            "img": img.value
         }
-        const request = await axios.post('/api/savedPlace', place)
-        router.push('/journey')
+        snackbar.value = 'success'
+        await setTimeout(function() {
+            console.log('save!')
+            axios.post('/api/savedPlace', place)
+            router.push('/journey')
+        }, 1500)
+        // await axios.post('/api/savedPlace', place)
+        // await router.push('/journey')
     } catch (error) {
         alert('에러 >>>' + error)
     }
@@ -149,6 +178,7 @@ onMounted(() => {
         });
     }
     getChoices("choices-category-edit");
+    getChoices("choices-country-edit");
     getChoices("choices-color-edit");
     getChoices("choices-currency-edit");
 

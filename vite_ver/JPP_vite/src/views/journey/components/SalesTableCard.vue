@@ -66,33 +66,42 @@
   </div>
 </template>
 <script setup>
-import { ref, onMounted, defineEmits } from 'vue';
+import { onMounted, defineEmits } from 'vue';
 import { useSimpleStore } from '@/store/journeyJSON.js';
 import { storeToRefs } from 'pinia';
 import { RouterLink } from 'vue-router'
 import "@/assets/js/world.js";
 import MaterialButton from "@/components/MaterialButton.vue"
-  ;
+
 //imgs
 import AU from "@/assets/img/icons/flags/AU.png";
 import US from "@/assets/img/icons/flags/US.png";
-import DE from "@/assets/img/icons/flags/DE.png";
+import EU from "@/assets/img/icons/flags/EU.png";
 import GB from "@/assets/img/icons/flags/GB.png";
 import BR from "@/assets/img/icons/flags/BR.png";
+import { onUpdated } from 'vue/dist/vue.d.mts';
 const simpleStore = useSimpleStore();
 const { exchangeList } = storeToRefs(simpleStore);
 const emit = defineEmits(['selected-country'])
 
-const flags = [AU, US, DE, GB, BR]
-
-// const updateFlag = (data) => {
-//   data.map((f) => { 
-//     flags.filter()
-//     f.flag = })
-// }
+const updateFlag = (data) => {
+  data.forEach(element => {
+    if(element.country_code === "US"){
+      element.flag = US
+    } else if(element.country_code === "AU") {
+      element.flag = AU
+    } else if(element.country_code === "EU") {
+      element.flag = EU
+    } 
+    else {
+      element.flag = BR
+    }
+  });
+}
 
 onMounted(() => {
-  // updateFlag(exchangeList.value);
+  updateFlag(exchangeList.value);
+
   // eslint-disable-next-line no-undef
   const map = new jsVectorMap({
     selector: "#map",
@@ -121,7 +130,10 @@ onMounted(() => {
       {
         name: "Japan",
         coords: [27.7495886, 134.3918065],
-      },
+      },{
+        name: "South Korea",
+        coords : [37.5511694, 126.9882266],
+      }
     ],
     labels: {
       markers: {
@@ -148,4 +160,8 @@ onMounted(() => {
     },
   });
 });
+
+onUpdated(() => {
+  updateFlag(exchangeList.value);
+})
 </script>

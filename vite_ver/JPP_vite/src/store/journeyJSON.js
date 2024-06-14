@@ -48,7 +48,16 @@ export const useSimpleStore = defineStore("exchange", () => {
     }
   };
 
+  const deletePlace = async (id) => {
+    // console.log(id)
+    try {
+      const response = await axios.delete('/api/savedPlace/' + id)
+    } catch (error) {
+      console.log(error)
+    }
+    // await axios.delete("/api/savedPlace")
+  }
   fetchExchageList();
 
-  return { exchangeList, fetchPlaceList,fetchExternalAPIExchageList };
+  return { exchangeList, fetchPlaceList, fetchExternalAPIExchageList, deletePlace };
 });
