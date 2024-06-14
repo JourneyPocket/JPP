@@ -1,27 +1,6 @@
 {
   "income": [
     {
-      "date": "2024-01-13",
-      "price": "100,000원",
-      "options": "salary",
-      "description": "월급으로 받는 소득입니다.",
-      "id": "2206"
-    },
-    {
-      "date": "2024-02-13",
-      "price": "50,000원",
-      "options": "pin money",
-      "description": "용돈으로 받은 금액입니다.",
-      "id": "80f1"
-    },
-    {
-      "date": "2024-03-13",
-      "price": "200,000원",
-      "options": "financial income",
-      "description": "금융 소득에서 발생한 금액입니다.",
-      "id": "66c7"
-    },
-    {
       "date": "2024-04-13",
       "price": "150,000원",
       "options": "other",
@@ -48,23 +27,16 @@
       "price": "100000원",
       "options": " financial income",
       "description": "돈벌었다"
+    },
+    {
+      "id": "cb89",
+      "date": "2024-06-14",
+      "price": "15020원",
+      "options": "pin money",
+      "description": "닭갈비"
     }
   ],
   "consumption": [
-    {
-      "date": "2024-01-13",
-      "price": "20,000원",
-      "options": "Food",
-      "description": "점심 식사 비용입니다.",
-      "id": "434c"
-    },
-    {
-      "date": "2024-02-13",
-      "price": "15,000원",
-      "options": "Transportation",
-      "description": "버스와 지하철 요금입니다.",
-      "id": "8d23"
-    },
     {
       "date": "2024-03-13",
       "price": "50,000원",
@@ -127,6 +99,13 @@
       "price": "3000원",
       "options": "Cultural Life",
       "description": "배고프다.."
+    },
+    {
+      "id": "56d9",
+      "date": "",
+      "price": "0원",
+      "options": "Food",
+      "description": ""
     }
   ],
   "exchange": [
@@ -179,28 +158,12 @@
       "toMoney": "1,000 USD"
     },
     {
-      "id": "578a",
-      "date": "",
-      "fromCountry": "Afghanistan",
-      "toCountry": "Burundi",
-      "fromMoney": 13333,
-      "toMoney": 13333
-    },
-    {
-      "id": "e6ae",
-      "date": "",
+      "id": "8805",
+      "date": "2024-06-11",
       "fromCountry": "Angola",
-      "toCountry": "Belarus",
-      "fromMoney": 13,
-      "toMoney": 13
-    },
-    {
-      "id": "44d7",
-      "date": "",
-      "fromCountry": "Korea",
       "toCountry": "USA",
-      "fromMoney": 0,
-      "toMoney": 0
+      "fromMoney": 1000,
+      "toMoney": 1000
     }
   ],
   "countryCode": {
@@ -442,40 +405,40 @@
       "national_money": 5974908,
       "country_code": "EU",
       "date": "2023-12-09",
-      "id": "fe88",
-      "flag": "AU"
+      "flag": "../../assets/icons/flags/AU.png",
+      "id": "fe88"
     },
     {
       "global_money": 1586,
       "national_money": 5928855,
       "country_code": "JP",
       "date": "2024-03-29",
-      "id": "9ae4",
-      "flag": "BR"
+      "flag": "../../assets/ icons/flags/AU.png",
+      "id": "9ae4"
     },
     {
       "global_money": 2014,
       "national_money": 249101,
       "country_code": "US",
       "date": "2023-09-05",
-      "id": "5777",
-      "flag": "US"
+      "flag": "../../assets/icons/flags/US.png",
+      "id": "5777"
     },
     {
       "global_money": 403,
       "national_money": 2532187,
       "country_code": "AU",
       "date": "2024-03-23",
-      "id": "5dd5",
-      "flag": "US"
+      "flag": "../../../assets/img/icons/flags/AU.png",
+      "id": "5dd5"
     },
     {
       "global_money": 2585,
       "national_money": 1434340,
       "country_code": "US",
       "date": "2023-08-17",
-      "id": "1bd9",
-      "flag": "AU"
+      "flag": "../../../assets/img/icons/flags/AU.png",
+      "id": "1bd9"
     }
   ],
   "savedPlace": [
@@ -487,7 +450,7 @@
       "country": "Japan",
       "category": "Entertainment",
       "priority": "Top of the List",
-      "img": "https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/59032d2d-b414-44aa-b2c2-3c5a43852fed.jpeg",
+      "img": "https://asset.japan.travel/image/upload/v1646014276/tokyo/H_00658_001.jpg",
       "id": "a14f"
     },
     {
@@ -498,7 +461,7 @@
       "country": "USA",
       "category": "Entertainment",
       "priority": "Can't Miss",
-      "img": "https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/59032d2d-b414-44aa-b2c2-3c5a43852fed.jpeg",
+      "img": "https://cdn.britannica.com/66/154566-050-36E73C15/Times-Square-New-York-City.jpg",
       "id": "c60c"
     },
     {
@@ -509,7 +472,7 @@
       "country": "Japan",
       "category": "Shopping",
       "priority": "Would Love to See",
-      "img": "https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/59032d2d-b414-44aa-b2c2-3c5a43852fed.jpeg",
+      "img": "https://media.cntraveler.com/photos/598202951209f576909acb19/16:9/w_2560,c_limit/Shibuya-Crossing-GettyImages-533959897.jpg",
       "id": "2fde"
     },
     {
@@ -517,10 +480,10 @@
       "link": "https://maps.google.com/?q=Golden+Gai",
       "reason": "작은 술집 거리",
       "date": "2024-05-25",
-      "country": "USA",
+      "country": "Japan",
       "category": "Entertainment",
       "priority": "Top of the List",
-      "img": "https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/59032d2d-b414-44aa-b2c2-3c5a43852fed.jpeg",
+      "img": "https://res.klook.com/image/upload/c_fill,w_800/q_65/activities/po67pdbomzpbo1t95fjs.jpg",
       "id": "1334"
     },
     {
@@ -531,7 +494,7 @@
       "country": "Japan",
       "category": "Other",
       "priority": "If There's Time",
-      "img": "https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/59032d2d-b414-44aa-b2c2-3c5a43852fed.jpeg",
+      "img": "https://media.cntraveler.com/photos/5a8c65b4fc08c0430e845f19/16:9/w_2560,c_limit/Shinjuku-Gyoen-National-Garden_2018_GettyImages-629620202.jpg",
       "id": "0cae"
     },
     {
@@ -542,7 +505,7 @@
       "country": "USA",
       "category": "Entertainment",
       "priority": "Top of the List",
-      "img": "https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/59032d2d-b414-44aa-b2c2-3c5a43852fed.jpeg",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRar8bwHwLT4Xl-FQzLCYOOPp2-PsAM2bMKTg&s",
       "id": "bf7c"
     },
     {
@@ -553,7 +516,7 @@
       "country": "Japan",
       "category": "Shopping",
       "priority": "Can't Miss",
-      "img": "https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/59032d2d-b414-44aa-b2c2-3c5a43852fed.jpeg",
+      "img": "https://rimage.gnst.jp/livejapan.com/public/article/detail/a/00/00/a0000110/img/basic/a0000110_main.jpg",
       "id": "0d35"
     },
     {
@@ -576,7 +539,7 @@
       "country": "Japan",
       "category": "Entertainment",
       "priority": "If There's Time",
-      "img": "https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/59032d2d-b414-44aa-b2c2-3c5a43852fed.jpeg"
+      "img": "https://rimage.gnst.jp/livejapan.com/public/article/detail/a/00/00/a0000132/img/ko/a0000132_parts_63ca2f21ae71d.jpg?20230922000000&q=80&rw=620&rw=443"
     },
     {
       "id": "3abc",
@@ -587,7 +550,326 @@
       "country": "USA",
       "category": "Other",
       "priority": "Maybe Someday",
-      "img": "https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/59032d2d-b414-44aa-b2c2-3c5a43852fed.jpeg"
+      "img": "https://olmsted.org/wp-content/uploads/2023/06/Park-Aerial_20190604_04-1-scaled.jpg"
+    },
+    {
+      "name": "Brandenburg Gate",
+      "link": "https://maps.google.com/?q=Brandenburg+Gate",
+      "reason": "독일 통일의 상징",
+      "date": "2024-03-10",
+      "country": "Germany",
+      "category": "Historical",
+      "priority": "Must Visit",
+      "img": "https://media.cntraveler.com/photos/5b914e80d5806340ca438db1/16:9/w_2560,c_limit/BrandenburgGate_2018_GettyImages-549093677.jpg",
+      "id": "b23g"
+    },
+    {
+      "name": "Neuschwanstein Castle",
+      "link": "https://maps.google.com/?q=Neuschwanstein+Castle",
+      "reason": "동화 속 성 같은 모습",
+      "date": "2024-03-20",
+      "country": "Germany",
+      "category": "Historical",
+      "priority": "Must Visit",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzmEimqBgnq-ecFRqUvIGfURGPDKwdBQgEmw&s",
+      "id": "b24g"
+    },
+    {
+      "name": "Berlin Wall",
+      "link": "https://maps.google.com/?q=Berlin+Wall",
+      "reason": "역사적인 장소",
+      "date": "2024-04-01",
+      "country": "Germany",
+      "category": "Historical",
+      "priority": "Must Visit",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVdPEbKsEfT-Gt4lEkwBu7t3u0AgzFsMCEXQ&s",
+      "id": "b25g"
+    },
+    {
+      "name": "Black Forest",
+      "link": "https://maps.google.com/?q=Black+Forest",
+      "reason": "자연의 아름다움",
+      "date": "2024-04-15",
+      "country": "Germany",
+      "category": "Nature",
+      "priority": "Must Visit",
+      "img": "https://a.cdn-hotels.com/gdcs/production137/d877/6ebd608a-ff8f-4836-ba6a-69c1441e7e39.jpg",
+      "id": "b26g"
+    },
+    {
+      "name": "Cologne Cathedral",
+      "link": "https://maps.google.com/?q=Cologne+Cathedral",
+      "reason": "유럽에서 가장 큰 고딕 성당",
+      "date": "2024-05-01",
+      "country": "Germany",
+      "category": "Historical",
+      "priority": "Must Visit",
+      "img": "https://www.aesu.com/wp-content/uploads/2020/03/europe-4272297_640.jpg",
+      "id": "b27g"
+    },
+    {
+      "name": "Saint Basil's Cathedral",
+      "link": "https://maps.google.com/?q=Saint+Basil%27s+Cathedral",
+      "reason": "러시아의 상징적인 건축물",
+      "date": "2024-04-15",
+      "country": "Russia",
+      "category": "Cultural",
+      "priority": "Top of the List",
+      "img": "https://i.namu.wiki/i/19tjWNjnG6UQwRfYGlueP45yi3Jde1G-sL5rvGncDT0l_hI9g7_EzUjG6GJNe-YprvhQC5f9Jq_Ra0odQSgSag.webp",
+      "id": "c34r"
+    },
+    {
+      "name": "Red Square",
+      "link": "https://maps.google.com/?q=Red+Square",
+      "reason": "모스크바의 중심지",
+      "date": "2024-05-01",
+      "country": "Russia",
+      "category": "Historical",
+      "priority": "Must Visit",
+      "img": "https://lp-cms-production.imgix.net/2019-06/GettyImages-498208877_high.jpg",
+      "id": "r02"
+    },
+    {
+      "name": "Hermitage Museum",
+      "link": "https://maps.google.com/?q=Hermitage+Museum",
+      "reason": "세계 최대의 미술관",
+      "date": "2024-06-10",
+      "country": "Russia",
+      "category": "Cultural",
+      "priority": "Top of the List",
+      "img": "https://mblogthumb-phinf.pstatic.net/MjAxODA4MjdfMjEw/MDAxNTM1MzA2NTc3Nzcx.gUBwJpXNliak7Ts1rXEgImJkLpySjyaORX_3EJDIJEAg.tdr1lcWDeE9f1vQG95p03nKb97gaMHYtJUCoYTcDL_wg.JPEG.booksolace/20180826_135248.jpg?type=w800",
+      "id": "r03"
+    },
+    {
+      "name": "Lake Baikal",
+      "link": "https://maps.google.com/?q=Lake+Baikal",
+      "reason": "세계에서 가장 깊은 호수",
+      "date": "2024-07-20",
+      "country": "Russia",
+      "category": "Nature",
+      "priority": "Must Visit",
+      "img": "https://mblogthumb-phinf.pstatic.net/MjAxOTAxMzFfMjUz/MDAxNTQ4OTMwODU5MzIw.HN00hFIhv4I1qPaTWgaudWqurLDm-Iicp8kqPOUAYT4g.HTQ0_my2vTVexUWrWuqrIbX2tE63LOrBq-ZNjr7Meegg.JPEG.iostour/%EB%B0%94%EC%9D%B4%EC%B9%BC%ED%98%B8%EC%88%98_(5).jpg?type=w800",
+      "id": "r04"
+    },
+    {
+      "name": "Kremlin",
+      "link": "https://maps.google.com/?q=Kremlin",
+      "reason": "러시아의 정치 중심지",
+      "date": "2024-08-30",
+      "country": "Russia",
+      "category": "Historical",
+      "priority": "Top of the List",
+      "img": "https://d2ur7st6jjikze.cloudfront.net/offer_photos/74642/457673_medium_1579586913.jpg?1579586913",
+      "id": "r05"
+    },
+    {
+      "name": "Christ the Redeemer",
+      "link": "https://maps.google.com/?q=Christ+the+Redeemer",
+      "reason": "브라질의 상징적인 예수상",
+      "date": "2024-04-15",
+      "country": "Brazil",
+      "category": "Cultural",
+      "priority": "Top of the List",
+      "img": "https://newsimg.hankookilbo.com/2020/04/13/202004131411092657_1.jpg",
+      "id": "b01"
+    },
+    {
+      "name": "Sugarloaf Mountain",
+      "link": "https://maps.google.com/?q=Sugarloaf+Mountain",
+      "reason": "리우데자네이루의 유명한 산",
+      "date": "2024-05-01",
+      "country": "Brazil",
+      "category": "Nature",
+      "priority": "Must Visit",
+      "img": "https://ak-d.tripcdn.com/images/100g1f000001gqy676A66.jpg?proc=source%2Ftrip",
+      "id": "b02"
+    },
+    {
+      "name": "Iguazu Falls",
+      "link": "https://maps.google.com/?q=Iguazu+Falls",
+      "reason": "세계에서 가장 넓은 폭포",
+      "date": "2024-06-10",
+      "country": "Brazil",
+      "category": "Nature",
+      "priority": "Top of the List",
+      "img": "https://i.namu.wiki/i/ozD80tm8o-HxKYbvIDp3kIC-Ktn5vaZMGyV3pbOKDPT3lVkV6oKVE9v3Fi6npzBFTIynC_N5ThNvyR1Y581-Qw.webp",
+      "id": "b03"
+    },
+    {
+      "name": "Amazon Rainforest",
+      "link": "https://maps.google.com/?q=Amazon+Rainforest",
+      "reason": "세계 최대의 열대우림",
+      "date": "2024-07-20",
+      "country": "Brazil",
+      "category": "Nature",
+      "priority": "Must Visit",
+      "img": "https://image.dongascience.com/Photo/2018/08/b639b7c660b0375f9743983dd3914740.jpg",
+      "id": "b04"
+    },
+    {
+      "name": "Copacabana Beach",
+      "link": "https://maps.google.com/?q=Copacabana+Beach",
+      "reason": "리우데자네이루의 유명한 해변",
+      "date": "2024-08-30",
+      "country": "Brazil",
+      "category": "Entertainment",
+      "priority": "Must Visit",
+      "img": "https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/ampm/image/mIG7l2GJT9AYW-HG_V5_SLJBSP4.jpg",
+      "id": "b05"
+    },
+    {
+      "name": "경복궁",
+      "link": "https://maps.google.com/?q=Gyeongbokgung",
+      "reason": "조선 왕조의 궁궐",
+      "date": "2024-04-15",
+      "country": "South Korea",
+      "category": "Historical",
+      "priority": "Must Visit",
+      "img": "https://news.eugenes.co.kr/news/photo/201608/2245_4430_324.jpg",
+      "id": "k01"
+    },
+    {
+      "name": "부산 해운대 해수욕장",
+      "link": "https://maps.google.com/?q=Haeundae+Beach",
+      "reason": "한국에서 가장 유명한 해변 중 하나",
+      "date": "2024-05-01",
+      "country": "South Korea",
+      "category": "Nature",
+      "priority": "Must Visit",
+      "img": "https://i.namu.wiki/i/hkDOgJHC40yiIFKQDRz7YjHpzWrL9vCTT7mve4TF6Lj-GpGsBpvT8WlXbwOT_To1Ndl1zKrVLQ-SiwaGNFOgQA.webp",
+      "id": "k02"
+    },
+    {
+      "name": "제주도 한라산",
+      "link": "https://maps.google.com/?q=Hallasan",
+      "reason": "대한민국 최고봉",
+      "date": "2024-06-10",
+      "country": "South Korea",
+      "category": "Nature",
+      "priority": "Top of the List",
+      "img": "https://i.namu.wiki/i/0NH09CBurKQ6EZZyfR0M9XCg5lyj3GvQJrRA_6eutMC1CZn6IzKqFnU7KPtVvtTNKULQzodTP_KfW6QAZdoVIg.webp",
+      "id": "k03"
+    },
+    {
+      "name": "경주 불국사",
+      "link": "https://maps.google.com/?q=Bulguksa",
+      "reason": "유네스코 세계유산",
+      "date": "2024-07-20",
+      "country": "South Korea",
+      "category": "Cultural",
+      "priority": "Must Visit",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPSLPsYKmtJT7X1CT7-Uqp4ObZSbZ_5lqtpQ&s",
+      "id": "k04"
+    },
+    {
+      "name": "서울 남산타워",
+      "link": "https://maps.google.com/?q=Namsan+Tower",
+      "reason": "서울의 랜드마크",
+      "date": "2024-08-30",
+      "country": "South Korea",
+      "category": "Entertainment",
+      "priority": "Top of the List",
+      "img": "https://i.namu.wiki/i/DK-BcaE6wDCM-N9UJbeQTn0SD9eWgsX9YKWK827rqjbrzDz0-CxW-JFOCiAsUL3CBZ4zE0UDR-p4sLaYPiUjww.webp",
+      "id": "k05"
+    },
+    {
+      "id": "5fdd",
+      "name": "경포대",
+      "link": "https://maps.app.goo.gl/kZVXVQeGe6GD6gwt8",
+      "reason": "바다가 조항용",
+      "date": "2024-11-03",
+      "country": "South Korea",
+      "category": "Other",
+      "priority": "Maybe Someday",
+      "img": "https://news.lghellovision.net/news/photo/202306/424798_27716_387.png"
+    },
+    {
+      "id": "78f2",
+      "name": "곽지 해수욕장",
+      "link": "https://maps.app.goo.gl/LTYSCK2ApFaXAa897",
+      "reason": "바다가 조항용",
+      "date": "",
+      "country": "South Korea",
+      "category": "Other",
+      "priority": "Maybe Someday",
+      "img": "https://api.cdn.visitjeju.net/photomng/imgpath/201912/12/590903b3-88f5-4e15-9f7e-d5a3571122c6.jpg"
+    },
+    {
+      "id": "7368",
+      "name": "kb-5-kakao-demo",
+      "link": "https://maps.app.goo.gl/LTYSCK2ApFaXAa897",
+      "reason": "",
+      "date": "",
+      "country": "",
+      "category": "",
+      "priority": "",
+      "img": "https://oimg1.kbstar.com/img/omweb/new/main_banner_9to6_v2.png"
+    },
+    {
+      "id": "46a8",
+      "name": "kb-5-kakao-demoASDASDF",
+      "link": "https://maps.app.goo.gl/LTYSCK2ApFaXAa897",
+      "reason": "",
+      "date": "",
+      "country": "",
+      "category": "",
+      "priority": "",
+      "img": "https://oimg1.kbstar.com/img/omweb/new/main_banner_9to6_v2.png"
+    },
+    {
+      "id": "2cd5",
+      "name": "kb-5-kakao-demossddssad",
+      "link": "https://maps.app.goo.gl/kZVXVQeGe6GD6gwt8",
+      "reason": "",
+      "date": "",
+      "country": "",
+      "category": "",
+      "priority": "",
+      "img": "https://oimg1.kbstar.com/img/omweb/new/main_banner_9to6_v2.png"
+    },
+    {
+      "id": "c1a6",
+      "name": "set Timeout Test",
+      "link": "https://www.naver.com",
+      "reason": "",
+      "date": "",
+      "country": "",
+      "category": "",
+      "priority": "",
+      "img": "https://oimg1.kbstar.com/img/omweb/new/main_banner_9to6_v2.png"
+    },
+    {
+      "id": "45a5",
+      "name": "urney Plans Enter and easily manage the places you want to visit on your journey.  Record Your Journey Plans",
+      "link": "https://maps.app.goo.gl/kZVXVQeGe6GD6gwt8",
+      "reason": "",
+      "date": "",
+      "country": "",
+      "category": "",
+      "priority": "",
+      "img": "https://oimg1.kbstar.com/img/omweb/new/main_banner_9to6_v2.png"
+    },
+    {
+      "id": "b1b0",
+      "name": "kb-5-kakao-demo",
+      "link": "https://maps.app.goo.gl/kZVXVQeGe6GD6gwt8",
+      "reason": "",
+      "date": "",
+      "country": "",
+      "category": "",
+      "priority": "",
+      "img": "https://oimg1.kbstar.com/img/omweb/new/main_banner_9to6_v2.png"
+    },
+    {
+      "id": "b361",
+      "name": "박민주",
+      "link": "https://maps.app.goo.gl/LTYSCK2ApFaXAa897",
+      "reason": "",
+      "date": "",
+      "country": "",
+      "category": "",
+      "priority": "",
+      "img": "https://oimg1.kbstar.com/img/omweb/new/main_banner_9to6_v2.png"
     }
   ]
 }

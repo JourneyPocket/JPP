@@ -4,12 +4,8 @@
       <div class="col-12">
         <div class="card">
           <!-- Card header -->
-          <div class="card-header">
-            <h5 class="mb-0">수입내역</h5>
-            <p class="mb-0 text-sm">
-              A lightweight, extendable, dependency-free javascript HTML table
-              plugin.
-            </p>
+          <div class="card-header bg-success">
+            <h5 class="mb-0 text-white">수입내역</h5>          
           </div>
           <div class="table-responsive">
             <table id="datatable-basic" class="table table-flush">
@@ -25,8 +21,15 @@
                 <tr class="ps-3" v-for="income in incomeList" :key="income.id">
                   <td class="text-sm font-weight-normal">{{ income.date }}</td>
                   <td class="text-sm font-weight-normal">{{ income.price }}</td>
-                  <td class="text-sm font-weight-normal">{{ income.options }}</td>
-                  <td class="text-sm font-weight-normal">{{ income.description }}</td>                    
+                  <td class="text-sm font-weight-normal">{{ income.options }}</td>                  
+                  <td class="text-sm font-weight-normal" style="max-width: 200px">
+                    <div class="row justify-content-md-center">                    
+                      <div class="col">{{income.description}}</div>
+                      <!-- <div class="col-auto"><button class="btn btn-success" @click="delList(income.id, 0)">edit</button></div> -->
+                      <div class="col-auto me-6"><button class="btn btn-secondary" @click="delList(income.id, 0)">delete</button>
+                    </div>
+                  </div>
+                </td>
                 </tr>                  
               </tbody>
             </table>
@@ -38,12 +41,9 @@
       <div class="col-12">
         <div class="card">
           <!-- Card header -->
-          <div class="card-header">
-            <h5 class="mb-0">지출내역</h5>
-            <p class="mb-0 text-sm">
-              A lightweight, extendable, dependency-free javascript HTML table
-              plugin.
-            </p>
+          <div class="card-header bg-danger">
+            <h5 class="mb-0 text-white">지출내역</h5>
+            
           </div>
           <div class="table-responsive">
             <table id="datatable-search" class="table table-flush">
@@ -60,7 +60,12 @@
                   <td class="text-sm font-weight-normal">{{ consumption.date }}</td>
                   <td class="text-sm font-weight-normal">{{ consumption.price }}</td>
                   <td class="text-sm font-weight-normal">{{ consumption.options }}</td>
-                  <td class="text-sm font-weight-normal">{{consumption.description}}</td>                    
+                  <td class="text-sm font-weight-normal" style="max-width: 200px;">
+                    <div class="row justify-content-md-center">
+                      <div class="col">{{consumption.description}}</div>
+                      <!-- <div class="col-auto"><button class="btn btn-success" @click="delList(income.id, 0)">edit</button></div> -->
+                      <div class="col-auto me-5"><button class="btn btn-secondary" @click="delList(consumption.id, 1)">delete</button></div>
+                  </div></td>
                 </tr>                  
               </tbody>
             </table>
@@ -103,6 +108,34 @@ import axios from 'axios';
       consumptionList.value.sort((a, b) => new Date(a.date) - new Date(b.date));
     } catch(error) {
       console.log(error);
+      alert("에러발생");
+    }
+  }
+  const editList = async(id, type) => {
+
+
+  }
+
+
+  
+  const delList = async(id, type) => {
+    let listUrl="";
+
+    if(type===0){
+      listUrl="/api/income";
+    }
+    else{
+      listUrl="/api/consumption";
+    }
+    
+    console.log(listUrl+'/'+id.toString());
+    try {
+      
+      let response = await axios.delete(listUrl+'/'+id.toString());
+      getIncomeList();
+      getConList();
+
+    } catch(error) {
       alert("에러발생");
     }
   }

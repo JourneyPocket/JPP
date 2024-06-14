@@ -10,18 +10,10 @@
             </h2>
             <div class="py-2">
               <div class="d-flex flex-nowrap align-items-center pb-3">
-                <label class="form-label fw-normal text-nowrap mb-0 me-2" for="sorting">Sort by:</label>
-                <select class="form-select form-select-sm me-2" id="sorting">
-                  <option>Date Created</option>
-                  <option>Product Name</option>
-                  <option>Price</option>
-                  <option>Your Rating</option>
-                  <option>Updates</option>
-                </select>
               </div>
             </div>
           </div>
-          <Places v-for="place in filteredPlaceList" :place="place"></Places>
+          <Places v-for="place in filteredPlaceList" :place="place" @deleteId="handledDeleteId"></Places>
         </div>
       </section>
     </div>
@@ -33,11 +25,10 @@ import Places from './Places.vue';
 import { ref, onMounted, computed } from 'vue'
 import { useSimpleStore } from '@/store/journeyJSON.js';
 
-const { fetchPlaceList, fetchExternalAPIExchageList } = useSimpleStore();
+const { fetchPlaceList, deletePlace } = useSimpleStore();
 
 const placeList = ref([])
-const count = ref(0)
-const exchange = ref([])
+
 
 const props = defineProps({
   country: {
@@ -45,6 +36,11 @@ const props = defineProps({
   }
 });
 
+const handledDeleteId = async (id) => {
+  let index = placeList.value.findIndex((place) => place.id === id);
+  placeList.value.splice(index, 1)
+  deletePlace(id)
+}
 
 // 저장된 장소 불러옴
 const getList = async () => {
@@ -52,11 +48,7 @@ const getList = async () => {
 }
 
 
-// 외부 환율 API
-const getExchange = async () => {
-  await fetchExternalAPIExchageList(exchange)
-  console.log(exchange.value)
-}
+
 
 // 필터링된 리스트를 계산합니다.
 const filteredPlaceList = computed(() => {
@@ -67,7 +59,6 @@ const filteredPlaceList = computed(() => {
 
 onMounted(() => {
   getList()
-  // getExchange()
 });
 
 </script>

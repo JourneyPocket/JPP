@@ -7,38 +7,6 @@
       
       <li class="nav-item" :class="getRoute() === 'dashboards' ? 'active' : ''">
         <sidenav-collapse
-          collapse-ref="brooklynAlice"
-          nav-text="Brooklyn Alice"
-          :class="getRoute() === 'brooklynAlice' ? 'active' : ''"
-        >
-          <template #icon>
-            <img src="../../assets/img/team-3.jpg" class="avatar" />
-          </template>
-          <template #list>
-            <ul class="nav pe-0">
-              <!-- nav links -->
-              <sidenav-item
-                to="Profile Overview"
-                mini-icon="MP"
-                text="My Profile"
-              />
-              <sidenav-item
-                to="Settings"
-                mini-icon="S"
-                text="Settings"
-              />
-              <sidenav-item
-                to="Signin Basic"
-                mini-icon="L"
-                text="Logout"
-              />
-            </ul>
-          </template>
-        </sidenav-collapse>
-      </li>
-      <hr class="horizontal light mt-2 mb-2" />
-      <li class="nav-item" :class="getRoute() === 'dashboards' ? 'active' : ''">
-        <sidenav-collapse
           collapse-ref="dashboardsExamples"
           nav-text="Dashboards"
           :class="getRoute() === 'dashboards' ? 'active' : ''"
@@ -96,24 +64,7 @@
             />
                 
               
-              <sidenav-collapse-item
-                refer="projectsExample"
-                mini-icon="P"
-                text="Projects"
-              >
-              <template #nav-child-item>
-                <sidenav-item
-                  to="Default"
-                  mini-icon="D"
-                  text="Analytics"
-                />
-                <sidenav-item
-                  to="Sales"
-                  mini-icon="S"
-                  text="Sales"
-                />
-              </template>
-            </sidenav-collapse-item>
+              
             </ul>
           </template>
         </sidenav-collapse>
