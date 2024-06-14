@@ -161,7 +161,6 @@ import FailNotifications from "../pages/FailNotifications.vue";
 import { mapMutations } from "vuex";
 import {ref} from 'vue';
 import axios from 'axios';
-import moment from 'moment';
 import {useRouter} from 'vue-router';
 export default {
   name: "IncomeInput",
