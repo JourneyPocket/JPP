@@ -58,12 +58,7 @@
                 :to="{ name: 'Report' }"
                 mini-icon="R"
                 text="Report"
-              />
-              <sidenav-item
-                :to="{ name: 'Transaction' }"
-                mini-icon="T"
-                text="Transaction History"
-              />
+              />            
             </ul>
           </template>
         </sidenav-collapse>
