@@ -41,9 +41,8 @@
                     <div class="row">
                         <div class="form-group mb-3 col">
                             <label for="fromCountrySelection">From Country</label>
-                            <select name="fromCountrySelection" class="form-select border ps-2" v-model="selectedFromCountry" >                    
-                                <option class="ms-3" v-for="countryType in countryTypes" :key="countryType" :value="countryType" selected>{{ countryType }}</option>
-                            </select>
+                            <div class="ms-1 fs-4 text-dark">Korea</div>
+                            
                         </div>          
                         <div class="mb-3 col">
                             <label for="amountInput">Amount</label>
@@ -198,6 +197,7 @@
 
         //date 형식이 맞는지 확인하는 함수
         const isValidDateFormat=(dateString)=> {
+          console.log(dateString)
           const regex = /^\d{4}-\d{2}-\d{2}$/;
           if (!regex.test(dateString)) {
             return false;
@@ -258,7 +258,7 @@
                   isAdd.value=!isAdd.value;
                 }, 1500);
               }          
-
+              
               // 달력 페이지로 이동
               router.push('/transaction/calendar');
               
